@@ -1,6 +1,8 @@
 # nlp2018_hp_asoif_rus
 Russian language evaluation of basic ASOIF and HP datasets.
 
+_Currently on step 19.M2_
+
 ### How to?
 1. Generate models with `create_model.py` for HP and ASOIF
 2. Check frequencies with `./dataset/check_frequencies.py`
