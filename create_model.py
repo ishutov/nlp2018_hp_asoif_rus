@@ -35,37 +35,38 @@ def train_model_ft(sentences, arg):
 
 
 def get_book_name(arg):
-    if arg == "asoif" or arg == "hp":
-        return arg
-    else:
+    if arg not in ["asoif", "hp"]:
         raise Exception("The book series must be either *ASOIF* or *HP*")
+    return arg
+
+
+def get_model(model_type, sentences, method_type):
+    if model_type == 'w':
+        return train_model_w2v(sentences, method_type)
+    elif model_type == 'f':
+        return train_model_ft(sentences, method_type)
+    else:
+        raise Exception("Please choose w2v or ft")
 
 
 def main():
     if len(sys.argv) < 3:
         raise Exception("We need three command line arguments: create_model.py book model")
-    else:
-        book = get_book_name(sys.argv[1].lower())
-        sentences = LineSentence(book + "_processed.txt")
+    book = get_book_name(sys.argv[1].lower())
+    sentences = LineSentence(book + "_processed.txt")
 
-        model_arg = sys.argv[2].lower()
-        if model_arg[0] == 'w':
-            model = train_model_w2v(sentences, model_arg)
-        elif model_arg[0] == 'f':
-            model = train_model_ft(sentences, model_arg)
-        else:
-            raise Exception("Please choose w2v or ft")
+    model_arg = sys.argv[2].lower()
+    model = get_model(model_arg[0], sentences, model_arg)
 
-        model_name = book + "_" + model_arg + ".model"
-        print("Model " + model_name + " created")
+    model_name = book + "_" + model_arg + ".model"
+    print("Model " + model_name + " created")
 
-        if model_arg[0] == 'w':
-            save_model(model, "models/" + model_name)
-        elif model_arg[0] == 'f':
-            save_model(model, "models/" + model_name)   # todo - how to save FastText model?
+    path = "models/" + model_name
+    save_model(model, path)
+    print("Model saved to path " + path)
 
-        print("Unique words count:")
-        print(len(model.wv.vocab))
+    print("Unique words count:")
+    print(len(model.wv.vocab))
 
 
 if __name__ == "__main__":
