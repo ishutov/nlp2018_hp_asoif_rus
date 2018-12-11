@@ -1,8 +1,8 @@
 import nltk
 import re
 
-INPUT_FILE = 'ASOIF.txt'
-OUTPUT_FILE = 'ASOIF_processed.txt'
+INPUT_FILE = 'asoif.txt'
+OUTPUT_FILE = 'asoif_processed.txt'
 DEFAULT_ENCODING = 'utf-8'
 RE_WORDS = r'(\w+[-\w+]*)'
 
