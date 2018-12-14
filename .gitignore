@@ -1,5 +1,3 @@
-.idea
-asoif.txt
-asoif_processed.txt
-hp_processed.txt
-hp.txt
+*.idea
+/project/asoif*
+/project/hp*
