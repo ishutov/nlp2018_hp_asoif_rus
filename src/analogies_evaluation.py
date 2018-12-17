@@ -1,9 +1,10 @@
 from __future__ import division
-import pickle
-from pprint import pprint
-from config import * 
-from w2v_dataset_helpers import load_models, print_details, print_latex_version
+
 from collections import OrderedDict
+from pprint import pprint
+
+from config import *
+from w2v_dataset_helpers import load_models, print_latex_version
 
 """
     evaluation script for the analogies task 
@@ -17,9 +18,9 @@ from collections import OrderedDict
 # read the analogies evaluation data from the path defined in config.py
 analogies_data = open(ANALOGIES_FILE, encoding='utf-8').readlines()
 
+
 # evaluate each of the embedding methods defined in config.py
 def evaluate_analogies(method, emb_type):
-
     # load model and init our data capture variables
     model = load_models(method, emb_type)
     acc_res = model.accuracy(ANALOGIES_FILE)
@@ -30,14 +31,14 @@ def evaluate_analogies(method, emb_type):
         ## collect data about this task
         sec = res['section']
         print("\n\tSection:", sec)
-        results[sec]={}
-        if len(res['correct'])+len(res['incorrect']) == 0:
+        results[sec] = {}
+        if len(res['correct']) + len(res['incorrect']) == 0:
             results[sec]['perc'] = 0
         else:
-            results[sec]['perc'] = len(res['correct']) / ( len(res['correct'])+len(res['incorrect']))
-        results[sec]['correct']  = len(res['correct'])
+            results[sec]['perc'] = len(res['correct']) / (len(res['correct']) + len(res['incorrect']))
+        results[sec]['correct'] = len(res['correct'])
         results[sec]['incorrect'] = len(res['incorrect'])
-        results[sec]['counts'] = str( len(res['correct'])+len(res['incorrect']) )
+        results[sec]['counts'] = str(len(res['correct']) + len(res['incorrect']))
 
     return results
 
@@ -45,8 +46,8 @@ def evaluate_analogies(method, emb_type):
 if __name__ == "__main__":
 
     # evaluate each of the embedding methods defined in config.py
-    for (method,emb_type) in METHODS:
+    for (method, emb_type) in METHODS:
         results = evaluate_analogies(method, emb_type)
         pprint(dict(results))
-        print ("Number of sections:", len(results)-1)
+        print("Number of sections:", len(results) - 1)
         print_latex_version(results, method, ANALOGIES_SECTIONS)

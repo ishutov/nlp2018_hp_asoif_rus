@@ -1,7 +1,9 @@
-import sys
-import nltk
+import glob
 import re
 import subprocess
+import sys
+
+import nltk
 
 OUTPUT_FILE = '_processed.txt'
 OUTPUT_LEM_FILE = '_processed_lem.txt'
@@ -38,13 +40,39 @@ def process_sentences(raw_sentences, output_file):
                 output_file.write(processed_sent + "\n")
 
 
-def lemmatize(input_file, output_file):
+def lemmatize(input_file, output_file, replacement_words):
     subprocess.call([r"./mystem.exe", "-lcd", input_file, output_file])
     raw_text = read_file(output_file, DEFAULT_ENCODING)
     with open(output_file, "w", encoding=DEFAULT_ENCODING) as f_out:
         for sent in raw_text.splitlines():
             processed_sent = remove_punctuation(sent)
-            f_out.write(processed_sent + "\n")
+            final_sent = ""
+            for word in processed_sent.split(' '):
+                replace = False
+                for repword in replacement_words:
+                    if repword.replace('ё', 'е') == word:
+                        final_sent += repword + " "
+                        replace = True
+                if not replace:
+                    final_sent += word + " "
+            f_out.write(final_sent.strip() + "\n")
+
+
+def getAllWordsFromDataset(INFILE, encoding):
+    result = []
+    for name in glob.glob(INFILE + '*'):
+
+        for line in open(name, encoding=encoding):
+            if line.startswith(':') or line.startswith('"') or not line.strip():
+                continue
+
+            words = line.split(' ')
+            words = [word.strip() for word in words]
+            for word in words:
+                if "ё" in word:
+                    result.append(word)
+
+    return list(set(result))
 
 
 def main():
@@ -55,7 +83,8 @@ def main():
     raw_sentences = nltk.tokenize.sent_tokenize(raw_text)
     with open(book + OUTPUT_FILE, "w", encoding=DEFAULT_ENCODING) as f_out:
         process_sentences(raw_sentences, f_out)
-    lemmatize(book + OUTPUT_FILE, book + OUTPUT_LEM_FILE)
+    oy_words = getAllWordsFromDataset("./dataset/" + book, DEFAULT_ENCODING)
+    lemmatize(book + OUTPUT_FILE, book + OUTPUT_LEM_FILE, oy_words)
 
 
 if __name__ == "__main__":
