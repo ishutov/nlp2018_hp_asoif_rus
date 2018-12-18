@@ -58,6 +58,10 @@ def lemmatize(input_file, output_file, replacement_words):
                         final_sent += repword + " "
                         replace = True
                         break
+                    elif repword.replace('ё', 'е').lower() == word:
+                        final_sent += repword + " "
+                        replace = True
+                        break
                 if not replace:
                     final_sent += word + " "
             f_out.write(final_sent.strip() + "\n")
