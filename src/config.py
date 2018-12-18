@@ -55,15 +55,15 @@ MODEL_PATH = "../models/"
 if BOOK_SERIES == "ASOIF":
     METHODS = [
         # w2vec models
-        ('asoif_w', 'vec'),
-        ('asoif_w1', 'vec'),
-        ('asoif_w2', 'vec'),
-        ('asoif_w3', 'vec'),
-        ('asoif_w4', 'vec'),
+        ('lem_asoif_w', 'vec'),
+        ('lem_asoif_w1', 'vec'),
+        ('lem_asoif_w2', 'vec'),
+        ('lem_asoif_w3', 'vec'),
+        ('lem_asoif_w4', 'vec'),
         # fastText models
-        ('asoif_f', 'vec'),
-        ('asoif_f1', 'vec'),
-        ('asoif_f2', 'vec'),
+        ('lem_asoif_f', 'vec'),
+        ('lem_asoif_f1', 'vec'),
+        ('lem_asoif_f2', 'vec'),
     ]
 
     if NGRAMS:
@@ -80,15 +80,15 @@ if BOOK_SERIES == "ASOIF":
 if BOOK_SERIES == "HP":
     METHODS = [
         # w2vec models
-        ('hp_w', 'vec'),
-        ('hp_w1', 'vec'),
-        ('hp_w2', 'vec'),
-        ('hp_w3', 'vec'),
-        ('hp_w4', 'vec'),
+        ('lem_hp_w', 'vec'),
+        ('lem_hp_w1', 'vec'),
+        ('lem_hp_w2', 'vec'),
+        ('lem_hp_w3', 'vec'),
+        ('lem_hp_w4', 'vec'),
         # fastText models
-        ('hp_f', 'vec'),
-        ('hp_f1', 'vec'),
-        ('hp_f2', 'vec'),
+        ('lem_hp_f', 'vec'),
+        ('lem_hp_f1', 'vec'),
+        ('lem_hp_f2', 'vec'),
     ]
 
     if NGRAMS:
