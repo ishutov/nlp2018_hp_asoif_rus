@@ -53,6 +53,11 @@ def lemmatize(input_file, output_file, replacement_words):
                     if repword.replace('ё', 'е') == word:
                         final_sent += repword + " "
                         replace = True
+                        break
+                    elif repword.lower() == word:
+                        final_sent += repword + " "
+                        replace = True
+                        break
                 if not replace:
                     final_sent += word + " "
             f_out.write(final_sent.strip() + "\n")
@@ -69,8 +74,7 @@ def getAllWordsFromDataset(INFILE, encoding):
             words = line.split(' ')
             words = [word.strip() for word in words]
             for word in words:
-                if "ё" in word:
-                    result.append(word)
+                result.append(word)
 
     return list(set(result))
 
