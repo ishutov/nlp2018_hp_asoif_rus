@@ -50,8 +50,8 @@ def print_latex_version(results, method, FILTER_SECTIONS):
     print('Number of tasks:       &', " & ".join(counts), " \\\\ \hline ")
     print(method, "               & ", " & ".join(vals), " \\\\ ")
     with open("./evaluation_result.txt", "a", encoding='utf-8') as f_out:
-        f_out.write('Number of tasks: \t' + " & ".join(counts) + " \n")
-        f_out.write(datetime.strftime(datetime.now(), "%d.%m %H:%M  ") + method + "\t  & " + " & ".join(vals) + " \n")
+        f_out.write('Number of tasks: \t |' + " | ".join(counts) + " | \n")
+        f_out.write(datetime.strftime(datetime.now(), "%d.%m %H:%M  ") + method + "\t  | " + " | ".join(vals) + " | \n")
 
 
 if __name__ == "__main__":
