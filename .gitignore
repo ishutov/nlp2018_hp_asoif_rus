@@ -1,4 +1,5 @@
 /asoif*
 /hp*
 /src/__pycache__
+/src/evaluation_result.txt
 *.idea
