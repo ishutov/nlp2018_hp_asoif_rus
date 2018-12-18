@@ -50,15 +50,7 @@ def lemmatize(input_file, output_file, replacement_words):
             for word in processed_sent.split(' '):
                 replace = False
                 for repword in replacement_words:
-                    if repword.replace('ё', 'е') == word:
-                        final_sent += repword + " "
-                        replace = True
-                        break
-                    elif repword.lower() == word:
-                        final_sent += repword + " "
-                        replace = True
-                        break
-                    elif repword.replace('ё', 'е').lower() == word:
+                    if repword.replace('ё', 'е').lower() == word:
                         final_sent += repword + " "
                         replace = True
                         break
