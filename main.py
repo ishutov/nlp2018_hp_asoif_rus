@@ -49,9 +49,9 @@ def lemmatize(input_file, output_file, replacement_words):
             final_sent = ""
             for word in processed_sent.split(' '):
                 replace = False
-                for repword in replacement_words:
-                    if repword.replace('ё', 'е').lower() == word:
-                        final_sent += repword + " "
+                for rep_word in replacement_words:
+                    if rep_word.replace('ё', 'е').lower() == word:
+                        final_sent += rep_word + " "
                         replace = True
                         break
                 if not replace:
@@ -59,19 +59,16 @@ def lemmatize(input_file, output_file, replacement_words):
             f_out.write(final_sent.strip() + "\n")
 
 
-def getAllWordsFromDataset(INFILE, encoding):
+def get_words_from_datasets(INFILE, encoding):
     result = []
     for name in glob.glob(INFILE + '*'):
-
         for line in open(name, encoding=encoding):
             if line.startswith(':') or line.startswith('"') or not line.strip():
                 continue
-
             words = line.split(' ')
             words = [word.strip() for word in words]
             for word in words:
                 result.append(word)
-
     return list(set(result))
 
 
@@ -83,8 +80,8 @@ def main():
     raw_sentences = nltk.tokenize.sent_tokenize(raw_text)
     with open(book + OUTPUT_FILE, "w", encoding=DEFAULT_ENCODING) as f_out:
         process_sentences(raw_sentences, f_out)
-    oy_words = getAllWordsFromDataset("./dataset/" + book, DEFAULT_ENCODING)
-    lemmatize(book + OUTPUT_FILE, book + OUTPUT_LEM_FILE, oy_words)
+    dataset_words = get_words_from_datasets("./dataset/" + book, DEFAULT_ENCODING)
+    lemmatize(book + OUTPUT_FILE, book + OUTPUT_LEM_FILE, dataset_words)
 
 
 if __name__ == "__main__":
