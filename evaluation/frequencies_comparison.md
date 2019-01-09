@@ -1,6 +1,8 @@
 ## Frequencies comparison between English and Russian versions
 
-| English         | Russian        |        Commnets                                     |
+### HP
+
+| English         | Russian        |        Comments                                     |
 |:-----------------|:----------------|:--------------------------------------------------|
 | ('Rodolphus', 5) | ('Родольфус', 5) | |
 | ('France', 5) | ('Франция', 6) | |
@@ -28,9 +30,21 @@
 | ('badger', 14) | ('барсук', 8) |  |
 | ('Bogrod', 15) | ('Богрод', 10)    |    |
 
+### SOIAF
+
+| English         | Russian        |        Comments                                     |
+|:-----------------|:----------------|:--------------------------------------------------|
+| ('Jeor', 8) | ('Джиор', 6) | |
+| ('Rhoyne', 8) | ('Ройн', 0)  | "ройна" in russian - lemmatization issue|
+| ('Giantsbane', 11) | - | different translation |
+| ('Joanna', 11) | ('Джоанна', 12)  |  |
+| ('Ramsay', 14) | - | "Рамси" in russian - 17 occurrences |
+
 ## List of non-matched words in russian 
 
-| Word        |        Commnets             |
+### HP
+
+| Word        |        Comments             |
 |:----------------|:--------------------------------------------------|
 ('Филч', 0) | lemmatization turned to "филча" |
 ('Пуффендуй', 0) |  "пуффендуйца" - person belongs to team |
@@ -67,3 +81,28 @@
 ('Бэйн', 14) | few occurrences |
 ('Тревор', 15) | few occurrences |
 ('храбрость', 15) | the same as "мужество" |
+
+### SOIAF
+
+| Word        |        Comments             |
+|:----------------|:--------------------------------------------------|
+('Орлиное_Гнездо', 0) | one word in english | 
+('Солнечное_Копье', 0) | one word in english | 
+('Клыки_Мороза', 0) | one word in english | 
+('Рослин', 0) | lemmatization ("рослиный") | 
+('Ширен', 0) | lemmatization ("ширей") | 
+('Великанья_Смерть', 0) | one word in english | 
+('Чаячий_город', 0) | one word in english | 
+('Джейме', 0) | lemmatization ("джейм") | 
+('Бран', 1) | "брандон" in russian | 
+('Оленна', 1) | lemmatization - "оленный" | 
+('Элия', 2) | "элинор", "элла" - various translations | 
+('Обара', 2) | lemmatization - "обар" | 
+('Тирош', 3) | lemmatization - "тироша" | 
+('Тиена', 5) | lemmatization - "тиен" | 
+('Лохматик', 7) | few occurrences | 
+('Эброз', 8) | few occurrences | 
+('Теон', 11) | lemmatization - "теона" | 
+('Волантис', 13) | "волантинец", "волантинский" - various forms of Volantis | 
+('Марон', 15) | few occurrences | 
+('Скагос', 15) | few occurrences | 
