@@ -40,9 +40,9 @@ def check_frequencies(INFILE, BOOK, encoding):
 
 def main():
     print("\n\tHarry Potter\n")
-    check_frequencies("hp", "../hp_processed.txt", DEFAULT_ENCODING)
+    check_frequencies("hp", "../hp_processed_lem.txt", DEFAULT_ENCODING)
     print("\n\n\tA Song of Ice and Fire\n")
-    check_frequencies("asoif", "../asoif_processed.txt", DEFAULT_ENCODING)
+    check_frequencies("asoif", "../asoif_processed_lem.txt", DEFAULT_ENCODING)
 
 if __name__ == "__main__":
     main()
