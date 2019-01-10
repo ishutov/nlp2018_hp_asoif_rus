@@ -93,7 +93,7 @@ def main():
 
     if ngram:
         sentences = LineSentence(book + "_processed_lem_ngram.txt")
-        model = get_model(model_arg[0], sentences, model_arg)
+        model = get_model_ngram(model_arg[0], sentences, model_arg)
     else:
         sentences = LineSentence(book + "_processed_lem.txt")
         model = get_model(model_arg[0], sentences, model_arg)

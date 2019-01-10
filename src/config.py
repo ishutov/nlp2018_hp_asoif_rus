@@ -8,8 +8,8 @@
 
 import sys
 
-NGRAMS = False
-# NGRAMS=True
+# NGRAMS = False
+NGRAMS=True
 
 ## this sets if we do evaluation based on term frequency (new) in doesnt_match evaluation
 ## for this you might need the book corpora to recompute the frequencies
@@ -115,12 +115,12 @@ if BOOK_SERIES == "ASOIF":
         FREQ_FILE = "../datasets/ngram/asoif.pickle"
 
     else:
-        ANALOGIES_FILE = "../dataset/questions_asoif_analogies.txt"
-        DOESNT_MATCH_FILE = "../dataset/questions_asoif_doesnt_match.txt"
+        ANALOGIES_FILE = "../datasets/questions_asoif_analogies.txt"
+        DOESNT_MATCH_FILE = "../datasets/questions_asoif_doesnt_match.txt"
         ANALOGIES_SECTIONS = ['firstname-lastname', 'child-father', 'husband-wife', 'geo-name-location', 'houses-seats',
                               'total']
         DOESNT_MATCH_SECTIONS = [': family-siblings', ': names-of-houses', ': Stark clan', ': free cities', 'TOTAL']
-        FREQ_FILE = "../dataset/freq_asoif.pickle"
+        FREQ_FILE = "../datasets/freq_asoif.pickle"
 
 if BOOK_SERIES == "HP":
     PRINT_DETAILS = False  ## verbose debugging of eval results
@@ -135,10 +135,10 @@ if BOOK_SERIES == "HP":
                                  ': members-of-Order_of_the_Phoenix', 'TOTAL']
         FREQ_FILE = "../datasets/ngram/hp.pickle"
     else:
-        ANALOGIES_FILE = "../dataset/questions_hp_analogies.txt"
-        DOESNT_MATCH_FILE = "../dataset/questions_hp_doesnt_match.txt"
+        ANALOGIES_FILE = "../datasets/questions_hp_analogies.txt"
+        DOESNT_MATCH_FILE = "../datasets/questions_hp_doesnt_match.txt"
         ANALOGIES_SECTIONS = ['firstname-lastname', 'child-father', 'husband-wife', 'name-species', 'total']
         # DOESNT_MATCH_SECTIONS = [': family-members', ': Gryffindor-members', ': magic-creatures', ': wizards-animagi', 'TOTAL']
         DOESNT_MATCH_SECTIONS = [': family-members', ': Gryffindor-members', ': magic-creatures', ': professors',
                                  'TOTAL']
-        FREQ_FILE = "../dataset/freq_hp.pickle"
+        FREQ_FILE = "../datasets/freq_hp.pickle"

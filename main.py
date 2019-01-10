@@ -80,7 +80,7 @@ def main():
     raw_sentences = nltk.tokenize.sent_tokenize(raw_text)
     with open(book + OUTPUT_FILE, "w", encoding=DEFAULT_ENCODING) as f_out:
         process_sentences(raw_sentences, f_out)
-    dataset_words = get_words_from_datasets("./dataset/" + book, DEFAULT_ENCODING)
+    dataset_words = get_words_from_datasets("./datasets/" + book, DEFAULT_ENCODING)
     lemmatize(book + OUTPUT_FILE, book + OUTPUT_LEM_FILE, dataset_words)
 
 
