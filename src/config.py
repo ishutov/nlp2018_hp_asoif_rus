@@ -64,6 +64,8 @@ if BOOK_SERIES == "ASOIF":
         ('lem_asoif_f', 'vec'),
         ('lem_asoif_f1', 'vec'),
         ('lem_asoif_f2', 'vec'),
+        # ('ruwikiruscorpora_upos_skipgram_300_2_2018.vec', 'vec'),
+        # ('wiki.ru.vec', 'vec'),
     ]
 
     if NGRAMS:
@@ -89,6 +91,8 @@ if BOOK_SERIES == "HP":
         ('lem_hp_f', 'vec'),
         ('lem_hp_f1', 'vec'),
         ('lem_hp_f2', 'vec'),
+        # ('ruwikiruscorpora_upos_skipgram_300_2_2018.vec', 'vec'),
+        # ('wiki.ru.vec', 'vec'),
     ]
 
     if NGRAMS:
@@ -111,11 +115,11 @@ if BOOK_SERIES == "ASOIF":
     PRINT_DETAILS = False  ## verbose debugging of eval results
 
     if NGRAMS:
-        ANALOGIES_FILE = "../datasets/questions_asoif_analogies_ngram.txt"
-        DOESNT_MATCH_FILE = "../datasets/questions_asoif_doesnt_match_ngram.txt"
+        ANALOGIES_FILE = "../datasets/ngram/questions_asoif_analogies_ngram.txt"
+        DOESNT_MATCH_FILE = "../datasets/ngram/questions_asoif_doesnt_match_ngram.txt"
         ANALOGIES_SECTIONS = ['name-nickname', 'child-father', 'total']
         DOESNT_MATCH_SECTIONS = [': bays', ': gods', ': cities-fortresses', ': Maesters', ': Houses', 'TOTAL']
-        FREQ_FILE = "../datasets/freq_asoif_ngram.pickle"
+        FREQ_FILE = "../datasets/ngram/asoif.pickle"
 
     else:
         ANALOGIES_FILE = "../dataset/questions_asoif_analogies.txt"
@@ -129,14 +133,14 @@ if BOOK_SERIES == "HP":
     PRINT_DETAILS = False  ## verbose debugging of eval results
 
     if NGRAMS:
-        ANALOGIES_FILE = "../datasets/questions_hp_analogies_ngram.txt"
-        DOESNT_MATCH_FILE = "../datasets/questions_hp_doesnt_match_ngram.txt"
+        ANALOGIES_FILE = "../datasets/ngram/questions_hp_analogies_ngram.txt"
+        DOESNT_MATCH_FILE = "../datasets/ngram/questions_hp_doesnt_match_ngram.txt"
         # ANALOGIES_SECTIONS = ['Gryffindor-Quidditch-team', 'Yule_ball-gentleman-lady', 'character-where_they_work', 'character-creature', 'total']
         ANALOGIES_SECTIONS = ['character-creature', 'character-where_they_work', 'total']
         # DOESNT_MATCH_SECTIONS = [': geographical-objects', ': closest-friends', ': unforgivable-curses', ': members-of-Order_of_the_Phoenix', ': ministers-for-magic', 'TOTAL']
         DOESNT_MATCH_SECTIONS = [': geographical-objects', ': ministry_of_magic-employees',
                                  ': members-of-Order_of_the_Phoenix', 'TOTAL']
-        FREQ_FILE = "../datasets/freq_hp_ngram.pickle"
+        FREQ_FILE = "../datasets/ngram/hp.pickle"
     else:
         ANALOGIES_FILE = "../dataset/questions_hp_analogies.txt"
         DOESNT_MATCH_FILE = "../dataset/questions_hp_doesnt_match.txt"
