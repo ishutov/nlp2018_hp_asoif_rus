@@ -4,7 +4,7 @@ Russian language evaluation of basic ASOIF and HP datasets.
 _Currently on step 19.M2_
 
 ### How to?
-1. Generate models with next command in console: `python create_model.py {hp|asoif} {w|w1|w2|w3|w4|f|f1|f2}`
+1. Generate models with next command in console: `python create_model.py {hp|asoif} {w|w1|w2|w3|w4|f|f1|f2} [ngram]` (Please note, for `ngram` only `{w1|w2|f}` modes are supported)
 - Word2Vec:
     - **w**: size=100, window=5, min_count=5, sample=0.001, sg=0, hs=0, negative=5, iter=5,
     - **w1**:  size=300, -negative=0, sg=1, hs=1, iter=15
@@ -16,6 +16,14 @@ _Currently on step 19.M2_
     - **f1**:  sg=1, hs=1, size=300, iter=15, window=12, negative=0
     - **f2**:  sg=1, hs=1, size=300, iter=15, window=12, negative=15
 
+***
+#### N-grams:
+- Word2Vec:
+    - **w1**: size=300, negative=0, sg=1, hs=1, iter=15, window=12
+    - **w2**: size=300, negative=15, sg=1, hs=1, iter=15, window=12
+- FastText:
+    - **f**: defaults, iter=25, window=12
+    
 2. Check frequencies with `./dataset/check_frequencies.py`
 3. Create questions with `./dataset/create_questions.py`
 4. Run next commands in console:
