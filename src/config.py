@@ -70,13 +70,11 @@ if BOOK_SERIES == "ASOIF":
 
     if NGRAMS:
         METHODS = [
-            # ('ppmi', 'bin'), #ppmi
-            ('asoif_w2v-ww12-300-ngram', 'bin'),
+            ('ngram_lem_asoif_w1', 'vec'),
             ## Skip-gram, window-size 12, 300dim, hier.softmax, iter 15, no neg-sampling
-            ('asoif_w2v-ww12-300-ns-ngram', 'bin'),
+            ('ngram_lem_asoif_w2', 'vec'),
             ## Skip-gram, window-size 12, 300dim, hier.softmax, iter 15, -negative 15
-            ('asoif_fastText_ngram', 'vec'),  # default and: -epoch 25 -ws 12
-            ('asoif_lexvec_ngram', 'vec'),  # default and: -epoch 25 -ws 12
+            ('ngram_lem_asoif_f', 'vec'),  # default and: -epoch 25 -ws 12
         ]
 
 if BOOK_SERIES == "HP":
@@ -97,14 +95,9 @@ if BOOK_SERIES == "HP":
 
     if NGRAMS:
         METHODS = [
-            # ('ppmi', 'bin'), #ppmi
-            ('hp_lexvec_ngram', 'vec'),
-            ('hp_fastText_ngram', 'vec'),  # for paper!, 25 epoch
-            ('hp_w2v-default-ngram', 'bin'),
-            ('hp_w2v-ww12-300-ngram', 'bin'),
-            ('hp_w2v-ww12-300-ns-ngram', 'bin'),
-            # ('hp_glove_ngrams', 'vec'),
-            # ('hp_w2v-CBOW_ngrams', 'bin'),
+            ('ngram_lem_hp_w1', 'vec'),
+            ('ngram_lem_hp_w2', 'vec'),
+            ('ngram_lem_hp_f', 'vec'),  # for paper!, 25 epoch
         ]
 
 # -----------------------------------------------------
