@@ -60,7 +60,7 @@
 ## Differences analysis
 
 Russian measurements are similar to English. For HP books Russian values are just a bit lower (~2-3%), and for ASOIF values differ more (~8%). 
-It is important to mention that russian books were processed after lemmatization - the [results are much lower](https://github.com/ishutov/nlp2018_hp_asoif_rus/blob/master/src/comparison_evaluation.md) without it
+It is important to mention that russian books were processed after lemmatization - the [results are much lower](https://github.com/ishutov/nlp2018_hp_asoif_rus/blob/master/evaluation/comparison_evaluation.md) without it
 
 We propose that the possible reasons of such results (russian values are lower even being lemmatized) are the following:
 
