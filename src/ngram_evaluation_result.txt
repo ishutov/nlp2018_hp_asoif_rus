@@ -1,0 +1,253 @@
+==============================================================================================================
+*********************************************** ANALOGIES ****************************************************
+==============================================================================================================
+
+**** Model: ngram_lem_hp_w1  binary?: False
+**** Model: ngram_lem_hp_w1  LOADED
+
+
+
+        Section: Yule_ball-gentleman-lady
+
+        Section: House-head_of_the_House
+
+        Section: wife-husband
+
+        Section: character-where_they_work
+
+        Section: character-creature
+
+        Section: character-love_interest
+
+        Section: Gryffindor-Quidditch-team
+
+        Section: total
+{'Gryffindor-Quidditch-team': {'correct': 0,
+                               'counts': '6',
+                               'incorrect': 6,
+                               'perc': 0.0},
+ 'House-head_of_the_House': {'correct': 0,
+                             'counts': '2',
+                             'incorrect': 2,
+                             'perc': 0.0},
+ 'Yule_ball-gentleman-lady': {'correct': 1,
+                              'counts': '12',
+                              'incorrect': 11,
+                              'perc': 0.08333333333333333},
+ 'character-creature': {'correct': 1,
+                        'counts': '12',
+                        'incorrect': 11,
+                        'perc': 0.08333333333333333},
+ 'character-love_interest': {'correct': 0,
+                             'counts': '0',
+                             'incorrect': 0,
+                             'perc': 0},
+ 'character-where_they_work': {'correct': 0,
+                               'counts': '6',
+                               'incorrect': 6,
+                               'perc': 0.0},
+ 'total': {'correct': 2,
+           'counts': '38',
+           'incorrect': 36,
+           'perc': 0.05263157894736842},
+ 'wife-husband': {'correct': 0, 'counts': '0', 'incorrect': 0, 'perc': 0}}
+Number of sections: 7
+Number of tasks:       & 12 & 6 & 38  \\ \hline
+ngram_lem_hp_w1                &  8.33 & 0.0 & 5.26  \\
+
+
+**** Model: ngram_lem_hp_w2  binary?: False
+**** Model: ngram_lem_hp_w2  LOADED
+
+
+
+        Section: Yule_ball-gentleman-lady
+
+        Section: House-head_of_the_House
+
+        Section: wife-husband
+
+        Section: character-where_they_work
+
+        Section: character-creature
+
+        Section: character-love_interest
+
+        Section: Gryffindor-Quidditch-team
+
+        Section: total
+{'Gryffindor-Quidditch-team': {'correct': 2,
+                               'counts': '6',
+                               'incorrect': 4,
+                               'perc': 0.3333333333333333},
+ 'House-head_of_the_House': {'correct': 0,
+                             'counts': '2',
+                             'incorrect': 2,
+                             'perc': 0.0},
+ 'Yule_ball-gentleman-lady': {'correct': 1,
+                              'counts': '12',
+                              'incorrect': 11,
+                              'perc': 0.08333333333333333},
+ 'character-creature': {'correct': 1,
+                        'counts': '12',
+                        'incorrect': 11,
+                        'perc': 0.08333333333333333},
+ 'character-love_interest': {'correct': 0,
+                             'counts': '0',
+                             'incorrect': 0,
+                             'perc': 0},
+ 'character-where_they_work': {'correct': 0,
+                               'counts': '6',
+                               'incorrect': 6,
+                               'perc': 0.0},
+ 'total': {'correct': 4,
+           'counts': '38',
+           'incorrect': 34,
+           'perc': 0.10526315789473684},
+ 'wife-husband': {'correct': 0, 'counts': '0', 'incorrect': 0, 'perc': 0}}
+Number of sections: 7
+Number of tasks:       & 12 & 6 & 38  \\ \hline
+ngram_lem_hp_w2                &  8.33 & 0.0 & 10.53  \\
+
+
+**** Model: ngram_lem_hp_f  binary?: False
+**** Model: ngram_lem_hp_f  LOADED
+
+
+
+        Section: Yule_ball-gentleman-lady
+
+        Section: House-head_of_the_House
+
+        Section: wife-husband
+
+        Section: character-where_they_work
+
+        Section: character-creature
+
+        Section: character-love_interest
+
+        Section: Gryffindor-Quidditch-team
+
+        Section: total
+{'Gryffindor-Quidditch-team': {'correct': 0,
+                               'counts': '6',
+                               'incorrect': 6,
+                               'perc': 0.0},
+ 'House-head_of_the_House': {'correct': 0,
+                             'counts': '2',
+                             'incorrect': 2,
+                             'perc': 0.0},
+ 'Yule_ball-gentleman-lady': {'correct': 0,
+                              'counts': '12',
+                              'incorrect': 12,
+                              'perc': 0.0},
+ 'character-creature': {'correct': 0,
+                        'counts': '12',
+                        'incorrect': 12,
+                        'perc': 0.0},
+ 'character-love_interest': {'correct': 0,
+                             'counts': '0',
+                             'incorrect': 0,
+                             'perc': 0},
+ 'character-where_they_work': {'correct': 0,
+                               'counts': '6',
+                               'incorrect': 6,
+                               'perc': 0.0},
+ 'total': {'correct': 0, 'counts': '38', 'incorrect': 38, 'perc': 0.0},
+ 'wife-husband': {'correct': 0, 'counts': '0', 'incorrect': 0, 'perc': 0}}
+Number of sections: 7
+Number of tasks:       & 12 & 6 & 38  \\ \hline
+ngram_lem_hp_f                &  0.0 & 0.0 & 0.0  \\
+
+
+
+
+================================================================================================================
+****************************************************************************************************************
+================================================================================================================
+
+
+
+
+**** Model: ngram_lem_asoif_w1  binary?: False
+**** Model: ngram_lem_asoif_w1  LOADED
+
+
+
+        Section: name-nickname
+
+        Section: child-father
+
+        Section: total
+{'child-father': {'correct': 0, 'counts': '0', 'incorrect': 0, 'perc': 0},
+ 'name-nickname': {'correct': 9, 'counts': '90', 'incorrect': 81, 'perc': 0.1},
+ 'total': {'correct': 9, 'counts': '90', 'incorrect': 81, 'perc': 0.1}}
+Number of sections: 2
+Number of tasks:       & 90 & 0 & 90  \\ \hline
+ngram_lem_asoif_w1                &  10.0 & 0 & 10.0  \\
+
+
+**** Model: ngram_lem_asoif_w2  binary?: False
+**** Model: ngram_lem_asoif_w2  LOADED
+
+
+
+        Section: name-nickname
+
+        Section: child-father
+
+        Section: total
+{'child-father': {'correct': 0, 'counts': '0', 'incorrect': 0, 'perc': 0},
+ 'name-nickname': {'correct': 10,
+                   'counts': '90',
+                   'incorrect': 80,
+                   'perc': 0.1111111111111111},
+ 'total': {'correct': 10,
+           'counts': '90',
+           'incorrect': 80,
+           'perc': 0.1111111111111111}}
+Number of sections: 2
+Number of tasks:       & 90 & 0 & 90  \\ \hline
+ngram_lem_asoif_w2                &  11.11 & 0 & 11.11  \\
+
+
+**** Model: ngram_lem_asoif_f  binary?: False
+**** Model: ngram_lem_asoif_f  LOADED
+
+
+
+        Section: name-nickname
+
+        Section: child-father
+
+        Section: total
+{'child-father': {'correct': 0, 'counts': '0', 'incorrect': 0, 'perc': 0},
+ 'name-nickname': {'correct': 0, 'counts': '90', 'incorrect': 90, 'perc': 0.0},
+ 'total': {'correct': 0, 'counts': '90', 'incorrect': 90, 'perc': 0.0}}
+Number of sections: 2
+Number of tasks:       & 90 & 0 & 90  \\ \hline
+ngram_lem_asoif_f                &  0.0 & 0 & 0.0  \\
+
+
+
+
+==============================================================================================================
+*********************************************** DOESN'T MATCH ************************************************
+==============================================================================================================
+
+
+
+**** Model: ngram_lem_asoif_w1  binary?: False
+**** Model: ngram_lem_asoif_w1  LOADED
+
+
+Traceback (most recent call last):
+  File "doesnt_match_evaluation.py", line 213, in <module>
+    task_results = evaluate_doesnt_match(method, emb_type, term_freq)
+  File "doesnt_match_evaluation.py", line 69, in evaluate_doesnt_match
+    found_outlier = model.doesnt_match(task_terms)
+  File "C:\Program Files\Python36\lib\site-packages\gensim\models\keyedvectors.py", line 894, in doesnt_match
+    raise ValueError("cannot select a word from an empty list")
+ValueError: cannot select a word from an empty list
+

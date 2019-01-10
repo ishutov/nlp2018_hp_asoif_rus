@@ -1,0 +1,172 @@
+==============================================================================================================
+*********************************************** ANALOGIES ****************************************************
+==============================================================================================================
+analogies_evaluation.py HP
+
+**** Model: wiki.ru.vec  LOADED
+
+
+C:\Program Files\Python36\lib\site-packages\gensim\matutils.py:737: FutureWarning: Conversion of the second argument of issubdtype from int to np.signedinteger is deprecated. In future, it will be treated as np.int32 == np.dtype(int).type.
+  if np.issubdtype(vec.dtype, np.int):
+
+        Section: firstname-lastname
+
+        Section: child-father
+
+        Section: child-mother
+
+        Section: husband-wife
+
+        Section: pets-of-Hagrid
+
+        Section: wizard_animagus-animal
+
+        Section: wizard-wand_wood
+
+        Section: faculty-element
+
+        Section: faculty-animal
+
+        Section: founder-faculty
+
+        Section: faculty_first_color-second_color
+
+        Section: Yule_ball-gentleman-lady
+
+        Section: wizard-country
+
+        Section: wizard-patronal_form
+
+        Section: name-house
+
+        Section: shortname-fullname
+
+        Section: name-species
+
+        Section: total
+{'Yule_ball-gentleman-lady': {'correct': 0,
+                              'counts': '0',
+                              'incorrect': 0,
+                              'perc': 0},
+ 'child-father': {'correct': 0, 'counts': '26', 'incorrect': 26, 'perc': 0.0},
+ 'child-mother': {'correct': 0, 'counts': '26', 'incorrect': 26, 'perc': 0.0},
+ 'faculty-animal': {'correct': 0, 'counts': '0', 'incorrect': 0, 'perc': 0},
+ 'faculty-element': {'correct': 0, 'counts': '0', 'incorrect': 0, 'perc': 0},
+ 'faculty_first_color-second_color': {'correct': 0,
+                                      'counts': '6',
+                                      'incorrect': 6,
+                                      'perc': 0.0},
+ 'firstname-lastname': {'correct': 3,
+                        'counts': '24',
+                        'incorrect': 21,
+                        'perc': 0.125},
+ 'founder-faculty': {'correct': 0, 'counts': '0', 'incorrect': 0, 'perc': 0},
+ 'husband-wife': {'correct': 0, 'counts': '6', 'incorrect': 6, 'perc': 0.0},
+ 'name-house': {'correct': 0, 'counts': '0', 'incorrect': 0, 'perc': 0},
+ 'name-species': {'correct': 0, 'counts': '0', 'incorrect': 0, 'perc': 0},
+ 'pets-of-Hagrid': {'correct': 0, 'counts': '0', 'incorrect': 0, 'perc': 0},
+ 'shortname-fullname': {'correct': 0, 'counts': '0', 'incorrect': 0, 'perc': 0},
+ 'total': {'correct': 3,
+           'counts': '88',
+           'incorrect': 85,
+           'perc': 0.03409090909090909},
+ 'wizard-country': {'correct': 0, 'counts': '0', 'incorrect': 0, 'perc': 0},
+ 'wizard-patronal_form': {'correct': 0,
+                          'counts': '0',
+                          'incorrect': 0,
+                          'perc': 0},
+ 'wizard-wand_wood': {'correct': 0, 'counts': '0', 'incorrect': 0, 'perc': 0},
+ 'wizard_animagus-animal': {'correct': 0,
+                            'counts': '0',
+                            'incorrect': 0,
+                            'perc': 0}}
+Number of sections: 17
+Number of tasks:       & 24 & 26 & 6 & 0 & 88  \\ \hline
+wiki.ru.vec                &  12.5 & 0.0 & 0.0 & 0 & 3.41  \\
+
+
+
+================================================================================================================
+****************************************************************************************************************
+================================================================================================================
+analogies_evaluation.py ASOIF
+
+**** Model: wiki.ru.vec  LOADED
+
+
+
+        Section: firstname-lastname
+
+        Section: child-father
+
+        Section: bastard-child-father
+
+        Section: husband-wife
+
+        Section: geo-name-location
+
+        Section: houses-seats
+
+        Section: name-animal-type
+
+        Section: Sigil_animal-house
+
+        Section: total
+{'Sigil_animal-house': {'correct': 0, 'counts': '0', 'incorrect': 0, 'perc': 0},
+ 'bastard-child-father': {'correct': 0,
+                          'counts': '0',
+                          'incorrect': 0,
+                          'perc': 0},
+ 'child-father': {'correct': 0, 'counts': '0', 'incorrect': 0, 'perc': 0},
+ 'firstname-lastname': {'correct': 0, 'counts': '0', 'incorrect': 0, 'perc': 0},
+ 'geo-name-location': {'correct': 0, 'counts': '0', 'incorrect': 0, 'perc': 0},
+ 'houses-seats': {'correct': 0, 'counts': '0', 'incorrect': 0, 'perc': 0},
+ 'husband-wife': {'correct': 0, 'counts': '0', 'incorrect': 0, 'perc': 0},
+ 'name-animal-type': {'correct': 0, 'counts': '0', 'incorrect': 0, 'perc': 0},
+ 'total': {'correct': 0, 'counts': '0', 'incorrect': 0, 'perc': 0}}
+Number of sections: 8
+Number of tasks:       & 0 & 0 & 0 & 0 & 0 & 0  \\ \hline
+wiki.ru.vec                &  0 & 0 & 0 & 0 & 0 & 0  \\
+
+
+
+
+==============================================================================================================
+*********************************************** DOESN'T MATCH ************************************************
+==============================================================================================================
+doesnt_match_evaluation.py HP
+
+
+**** Model: wiki.ru.vec  binary?: False
+
+**** Model: wiki.ru.vec  LOADED
+
+
+Traceback (most recent call last):
+  File "doesnt_match_evaluation.py", line 213, in <module>
+    task_results = evaluate_doesnt_match(method, emb_type, term_freq)
+  File "doesnt_match_evaluation.py", line 69, in evaluate_doesnt_match
+    found_outlier = model.doesnt_match(task_terms)
+  File "C:\Program Files\Python36\lib\site-packages\gensim\models\keyedvectors.py", line 894, in doesnt_match
+    raise ValueError("cannot select a word from an empty list")
+ValueError: cannot select a word from an empty list
+
+
+
+================================================================================================================
+****************************************************************************************************************
+================================================================================================================
+doesnt_match_evaluation.py ASOIF
+
+**** Model: wiki.ru.vec  LOADED
+
+
+Traceback (most recent call last):
+  File "doesnt_match_evaluation.py", line 213, in <module>
+    task_results = evaluate_doesnt_match(method, emb_type, term_freq)
+  File "doesnt_match_evaluation.py", line 69, in evaluate_doesnt_match
+    found_outlier = model.doesnt_match(task_terms)
+  File "C:\Program Files\Python36\lib\site-packages\gensim\models\keyedvectors.py", line 894, in doesnt_match
+    raise ValueError("cannot select a word from an empty list")
+ValueError: cannot select a word from an empty list
+
