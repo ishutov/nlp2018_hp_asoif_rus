@@ -12,7 +12,7 @@ RE_WORDS = r'(\w+[-\w+]*)'
 
 
 def get_book_name(arg):
-    if arg not in ["asoif", "hp"]:
+    if arg not in ["asoif", "hp", "asoif_eng", "hp_eng"]:
         raise Exception("The book series must be either *ASOIF* or *HP*")
     return arg
 
