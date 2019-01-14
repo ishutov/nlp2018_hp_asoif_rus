@@ -92,13 +92,13 @@ def main():
     book, model_arg, ngram = parse_input(sys.argv)
 
     if ngram:
-        sentences = LineSentence(book + "_processed_lem_ngram.txt")
+        sentences = LineSentence(book + "_processed_ngram.txt")
         model = get_model_ngram(model_arg[0], sentences, model_arg)
     else:
         sentences = LineSentence(book + "_processed_lem.txt")
         model = get_model(model_arg[0], sentences, model_arg)
 
-    model_name = "lem_" + book + "_" + model_arg + ".model"
+    model_name = book + "_" + model_arg + ".model"
     if ngram:
         model_name = "ngram_" + model_name
 
