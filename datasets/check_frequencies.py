@@ -7,7 +7,6 @@ MIN_NUM = 5
 def check_frequencies(INFILE, BOOK, encoding):
     all_words = []
     for name in glob.glob(INFILE + '*'):
-
         for line in open(name, encoding=encoding):
             if line.startswith(':') or line.startswith('"') or not line.strip():
                 continue
@@ -36,16 +35,16 @@ def check_frequencies(INFILE, BOOK, encoding):
 
     dw = dict(words_sorted)
 
-    pickle.dump(dw, open('freq_' + INFILE + '.pickle', 'wb'))
-    # pickle.dump(dw, open(INFILE + '.pickle', 'wb'))
+    # pickle.dump(dw, open('freq_' + INFILE + '.pickle', 'wb'))
+    pickle.dump(dw, open(INFILE + '.pickle', 'wb'))
 
 def main():
     print("\n\tHarry Potter\n")
-    check_frequencies("hp", "../hp_processed_lem.txt", DEFAULT_ENCODING)
-    # check_frequencies("./ngram/hp", "../hp_processed_lem_ngram.txt", DEFAULT_ENCODING)
+    # check_frequencies("hp", "../hp_processed_lem.txt", DEFAULT_ENCODING)
+    check_frequencies("./ngram/hp", "../hp_processed_ngram.txt", DEFAULT_ENCODING)
     print("\n\n\tA Song of Ice and Fire\n")
-    check_frequencies("asoif", "../asoif_processed_lem.txt", DEFAULT_ENCODING)
-    # check_frequencies("./ngram/asoif", "../asoif_processed_lem_ngram.txt", DEFAULT_ENCODING)
+    # check_frequencies("asoif", "../asoif_processed_lem.txt", DEFAULT_ENCODING)
+    check_frequencies("./ngram/asoif", "../asoif_processed_ngram.txt", DEFAULT_ENCODING)
 
 if __name__ == "__main__":
     main()
