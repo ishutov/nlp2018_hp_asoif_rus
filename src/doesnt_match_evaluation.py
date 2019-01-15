@@ -66,7 +66,10 @@ def evaluate_doesnt_match(method, emb_type, term_freq=None):
             if not found_outlier: continue
             # found_outlier = solve_task_2( ppmi, task_terms)
         else:
-            found_outlier = model.doesnt_match(task_terms)
+            try:
+                found_outlier = model.doesnt_match(task_terms)
+            except Exception:
+                found_outlier = None
 
         ## judge correctness of candidate
         correct = 0.0  # False
@@ -88,9 +91,11 @@ def evaluate_doesnt_match(method, emb_type, term_freq=None):
             avg_tf = sum(term_freq[t] for t in task_terms) / len(task_terms)
             # print(list(term_freq[t] for t in task_terms))
             # print (avg_tf)
-
-            task_results.append((task_type, task_terms, found_outlier, correct_outlier, term_freq[found_outlier],
-                                 term_freq[correct_outlier], avg_tf, difficulty, correct))
+            if found_outlier == None:
+                task_results.append((task_type, task_terms, found_outlier, correct_outlier, 0, term_freq[correct_outlier], avg_tf, difficulty, correct))
+            else:
+                task_results.append((task_type, task_terms, found_outlier, correct_outlier, term_freq[found_outlier],
+                                     term_freq[correct_outlier], avg_tf, difficulty, correct))
         else:
             task_results.append((task_type, task_terms, found_outlier, correct_outlier, difficulty, correct))
 
@@ -204,9 +209,11 @@ def analyze_with_pandas(method, task_results):
 
 if __name__ == "__main__":
 
+    term_freq = None
+
     if DO_FREQ_EVAL:
         term_freq = pickle.load(open(FREQ_FILE, 'rb'))
-    print(term_freq)
+        print(term_freq)
 
     # evaluate each of the embedding methods defined in config.py
     for (method, emb_type) in METHODS:
