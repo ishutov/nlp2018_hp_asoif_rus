@@ -64,6 +64,26 @@
 | **f2** | 30.03 | 5.26 | 10.0      | 2.27  | 33.33   | 27.08 |
 </td></tr> </table>
 
+Analogies evaluation (***N-GRAM***)
+<table>
+<tr><th>HP</th><th>ASOIF</th></tr>
+<tr><td>
+
+|         |   **SECTIONS**     |         |        |
+|---------------------------------|---------|--------|---------|
+|**Model**|character-creature|character-where_they_work|**total**|
+|ngram_lem_hp_w1                              | 8.33 | 0.0 | **5.26**|
+|ngram_lem_hp_w2                | 8.33 | 0.0 | **10.53**|
+|ngram_lem_hp_f                | 0.0 | 0.0 | **0.0**|
+</td><td>
+
+|         |   **SECTIONS**     |         |        |
+|---------------------------------|---------|--------|---------|
+|**Model**|name-nickname|character-where_they_work|**total**|
+ngram_lem_asoif_w1                | 10.0 | 0.0 | **10.0**
+ngram_lem_asoif_w2                | 11.11 | 0.0 | **11.11**
+ngram_lem_asoif_f                | 0.0 | 0.0 | **0.0**
+</td></tr> </table>  
 
 ##Doesn't match:
 
@@ -129,4 +149,25 @@
 | **f**  | 70.0 | 72.76 | 78.3 | 71.71 | 72.65   |
 | **f1** | 77.5 | 60.63 | 80.18 | 79.29 | 68.8   |
 | **f2** | 76.25 | 56.87 | 80.62 | 81.43 | 66.52 |
+</td></tr> </table>
+
+**Doesn't match** evaluation (***N-GRAM***)
+<table>
+<tr><th>HP</th><th>ASOIF</th></tr>
+<tr><td>
+
+|                        |         |   **SECTIONS**     |         |        |        
+|---------------------------------|---------|--------|---------|--------|
+|**Model**| geographical-objects|ministry_of_magic-employees | members-of-Order_of_the_Phoenix|**total**|
+ngram_lem_hp_w1                | 80.0 | 33.75 | 61.25 | **75.52**
+ngram_lem_hp_w2                | 80.0 | 30.0 | 27.5 | **73.39**
+ngram_lem_hp_f                | 80.0 | 27.5 | 27.5 | **73.44**
+</td><td>
+
+|                        |         |   **SECTIONS**     |         |        |         |   |     
+|---------------------------------|---------|--------|---------|--------|----------|---|
+|**Model**| bays | gods | cities-fortresses|Maesters|Houses|**total**|
+ngram_lem_asoif_w1                              | 90.0 | 55.0 | 52.5 | 55.0 | 75.0 | **69.6**
+ngram_lem_asoif_w2                | 90.0 | 55.0 | 54.37 | 55.0 | 75.0 | **69.75**
+ngram_lem_asoif_f                | 90.0 | 55.0 | 46.88 | 55.0 | 75.0 | **69.15**
 </td></tr> </table>
