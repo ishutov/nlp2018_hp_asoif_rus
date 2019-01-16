@@ -30,6 +30,8 @@
 
 [Frequencies comparison between English and Russian](/evaluation/frequencies_comparison.md) 
 
+[Wikipedia evaluation](/evaluation/wiki_evaluation.md) 
+
 [Average frequencies for English and Russian](/evaluation/avg_frequencies_comparison.md) 
 
 
