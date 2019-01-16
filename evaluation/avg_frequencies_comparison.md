@@ -1,3 +1,6 @@
+### Average frequencies for English and Russian
+with count for words that are 5 or less
+
 ### HP
 
 | Unigram             | eng    | rus   | rus_lem  |
