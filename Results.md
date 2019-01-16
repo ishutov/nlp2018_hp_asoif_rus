@@ -27,3 +27,7 @@
 [Analogies and doesn't match evaluation](/evaluation/comparison_evaluation.md) 
 
 [Comparison of evaluation between English and Russian](/evaluation/eng_rus_comparison.md) 
+
+[Frequencies comparison between English and Russian](/evaluation/frequencies_comparison.md) 
+
+[Average frequencies for English and Russian](/evaluation/avg_frequencies_comparison.md) 
