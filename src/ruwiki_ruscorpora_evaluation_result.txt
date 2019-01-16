@@ -139,19 +139,8 @@ ruwikiruscorpora_upos_skipgram_300_2_2018.vec                &  0 & 0 & 0 & 0 & 
 doesnt_match_evaluation.py HP
 
 
-**** Model: wiki.ru.vec  binary?: False
 
-**** Model: wiki.ru.vec  LOADED
-
-
-Traceback (most recent call last):
-  File "doesnt_match_evaluation.py", line 213, in <module>
-    task_results = evaluate_doesnt_match(method, emb_type, term_freq)
-  File "doesnt_match_evaluation.py", line 69, in evaluate_doesnt_match
-    found_outlier = model.doesnt_match(task_terms)
-  File "C:\Program Files\Python36\lib\site-packages\gensim\models\keyedvectors.py", line 894, in doesnt_match
-    raise ValueError("cannot select a word from an empty list")
-ValueError: cannot select a word from an empty list
+Number of tasks:       & 0 & 0 & 0 & 0 & 0 & 0  \\ \hline
 
 
 
@@ -160,15 +149,7 @@ ValueError: cannot select a word from an empty list
 ================================================================================================================
 doesnt_match_evaluation.py ASOIF
 
-**** Model: wiki.ru.vec  LOADED
 
 
-Traceback (most recent call last):
-  File "doesnt_match_evaluation.py", line 213, in <module>
-    task_results = evaluate_doesnt_match(method, emb_type, term_freq)
-  File "doesnt_match_evaluation.py", line 69, in evaluate_doesnt_match
-    found_outlier = model.doesnt_match(task_terms)
-  File "C:\Program Files\Python36\lib\site-packages\gensim\models\keyedvectors.py", line 894, in doesnt_match
-    raise ValueError("cannot select a word from an empty list")
-ValueError: cannot select a word from an empty list
+Number of tasks:       & 0 & 0 & 0 & 0 & 0 & 0  \\ \hline
 

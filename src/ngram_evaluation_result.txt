@@ -242,12 +242,1092 @@ ngram_lem_asoif_f                &  0.0 & 0 & 0.0  \\
 **** Model: ngram_lem_asoif_w1  LOADED
 
 
-Traceback (most recent call last):
-  File "doesnt_match_evaluation.py", line 213, in <module>
-    task_results = evaluate_doesnt_match(method, emb_type, term_freq)
-  File "doesnt_match_evaluation.py", line 69, in evaluate_doesnt_match
-    found_outlier = model.doesnt_match(task_terms)
-  File "C:\Program Files\Python36\lib\site-packages\gensim\models\keyedvectors.py", line 894, in doesnt_match
-    raise ValueError("cannot select a word from an empty list")
-ValueError: cannot select a word from an empty list
+C:\Program Files\Python36\lib\site-packages\gensim\matutils.py:737: FutureWarning: Conversion of the second argument of issubdtype from `int` to `np.signedinteger` is deprecated. In future, it will be treated as `np.int32 == np.dtype(int).type`.
+  if np.issubdtype(vec.dtype, np.int):
 
+Total values of accuracy per **difficulty** category for: ngram_lem_asoif_w1
+            found_tf  correct_tf    avg_tf  correct
+difficulty                                         
+1            129.536     166.016   46.6565    0.610
+2            418.824     421.440  110.5125    0.672
+3            121.616     120.240   35.2125    0.526
+4            656.302     664.984  171.3985    0.976
+
+Deeper look into difficulty data, here only check out data for difficulty level: 1
+task_type
+: Houses               280
+: Maesters             100
+: bays                  20
+: cities-fortresses     40
+: gods                  20
+: languages             20
+: seas                  20
+Name: correct, dtype: int64
+                     found_tf  correct_tf   avg_tf  correct
+task_type                                                  
+: Houses                180.2       237.0  59.2500    0.800
+: Maesters               28.0        46.2  21.6750    0.200
+: bays                   74.6        75.2  20.6750    0.800
+: cities-fortresses     186.8       183.5  72.6875    0.525
+: gods                   28.0        41.0  27.3125    0.200
+: languages              24.8        43.0  10.7500    0.200
+: seas                   74.6        75.2  24.4250    0.800
+
+Deeper look into difficulty data, here check out data for all difficulty levels
+                                found_tf  correct_tf    avg_tf  correct
+task_type           difficulty                                         
+: Houses            1            180.200       237.0   59.2500    0.800
+                    2            648.000       648.0  162.0000    1.000
+                    3              8.800         8.8    2.2000    0.200
+                    4            753.800       753.8  188.4500    1.000
+: Maesters          1             28.000        46.2   21.6750    0.200
+                    2              0.000         0.0   10.1250    0.000
+                    3             43.400        43.4   20.9750    1.000
+                    4            436.600       436.6  119.2750    1.000
+: bays              1             74.600        75.2   20.6750    0.800
+                    2            180.200       237.0   61.1250    0.800
+                    3            646.000       646.0  163.3750    1.000
+                    4            753.800       753.8  190.3250    1.000
+: cities-fortresses 1            186.800       183.5   72.6875    0.525
+                    2            429.000       376.5  120.9375    0.200
+                    3             58.100        40.9   37.0375    0.675
+                    4            328.075       436.6  135.9625    0.700
+: gods              1             28.000        41.0   27.3125    0.200
+                    2              0.000         0.0   17.0625    0.000
+                    3            646.000       646.0  178.5625    1.000
+                    4            753.800       753.8  205.5125    1.000
+: languages         1             24.800        43.0   10.7500    0.200
+                    2            180.200       237.0   59.2500    0.800
+                    3            646.000       646.0  161.5000    1.000
+                    4            753.800       753.8  188.4500    1.000
+: seas              1             74.600        75.2   24.4250    0.800
+                    2            180.200       237.0   64.8750    0.800
+                    3            646.000       646.0  167.1250    1.000
+                    4            753.800       753.8  194.0750    1.000
+
+df.describe -- closer statistical look at global data
+          found_tf   correct_tf       avg_tf      correct
+count  2000.000000  2000.000000  2000.000000  2000.000000
+mean    331.569500   343.170000    90.945000     0.696000
+std     597.636001   595.433287   148.108272     0.460098
+min       0.000000     0.000000     0.000000     0.000000
+25%       0.000000     9.750000    10.812500     0.000000
+50%      89.000000    92.000000    30.750000     1.000000
+75%     256.000000   256.000000    71.000000     1.000000
+max    2696.000000  2696.000000   698.250000     1.000000
+Number of categories 7
+correlation between difficulty and correct result 0.2313931739873437
+correlation between correct-term frequency and correctness 0.32635682103229924
+correlation between   found-term frequency and correctness 0.35453156897738913
+correlation between average term frequency and correctness 0.3149954997785978
+
+***************************************************Total values of accuracy per **tf_category** for: ngram_lem_asoif_w1
+
+------------ found_tf_category
+                      found_tf   correct_tf      avg_tf   correct
+found_tf_category                                                
+1                    17.000000    17.000000   19.142857  1.000000
+2                    33.608466    33.608466   13.067460  1.000000
+3                    77.810219    77.810219   22.880474  1.000000
+4                   196.026860   196.504132   57.332645  0.900826
+5                   642.800000   642.800000  161.616071  1.000000
+6                  1779.138340  1779.138340  448.166008  1.000000
+found_tf_category
+1     28
+2    189
+3    274
+4    484
+5    140
+6    253
+dtype: int64
+
+------------ avg_tf_category
+                    found_tf   correct_tf      avg_tf   correct
+avg_tf_category                                                
+1                  22.875556    25.915556   10.650556  0.566667
+2                  96.903661    92.333333   31.720135  0.826590
+3                 180.502959   239.979290   67.727811  0.745562
+4                 877.220472   893.370079  227.465551  0.968504
+5                2153.567568  2153.567568  540.312500  1.000000
+6                        NaN          NaN         NaN       NaN
+avg_tf_category
+1    450
+2    519
+3    338
+4    254
+5    148
+6      0
+dtype: int64
+
+------------ correct_tf_category
+                        found_tf   correct_tf      avg_tf   correct
+correct_tf_category                                                
+1                       7.724138    13.310345   14.267241  0.241379
+2                      35.270833    33.583333   13.610677  0.984375
+3                      71.948052    75.441558   23.564935  0.889610
+4                     172.763462   213.869231   58.574519  0.838462
+5                     642.800000   642.800000  161.616071  1.000000
+6                    1759.929688  1773.078125  447.078125  0.988281
+correct_tf_category
+1    116
+2    192
+3    308
+4    520
+5    140
+6    256
+dtype: int64
+
+Total values of accuracy per **found_tf_category** category for: ngram_lem_asoif_w1
+                      found_tf   correct_tf      avg_tf   correct
+found_tf_category                                                
+1                    17.000000    17.000000   19.142857  1.000000
+2                    33.608466    33.608466   13.067460  1.000000
+3                    77.810219    77.810219   22.880474  1.000000
+4                   196.026860   196.504132   57.332645  0.900826
+5                   642.800000   642.800000  161.616071  1.000000
+6                  1779.138340  1779.138340  448.166008  1.000000
+
+Total values of accuracy per **avg_tf_category** category for: ngram_lem_asoif_w1
+                    found_tf   correct_tf      avg_tf   correct
+avg_tf_category                                                
+1                  22.875556    25.915556   10.650556  0.566667
+2                  96.903661    92.333333   31.720135  0.826590
+3                 180.502959   239.979290   67.727811  0.745562
+4                 877.220472   893.370079  227.465551  0.968504
+5                2153.567568  2153.567568  540.312500  1.000000
+6                        NaN          NaN         NaN       NaN
+
+Total values of accuracy per **correct_tf_category** category for: ngram_lem_asoif_w1
+                        found_tf   correct_tf      avg_tf   correct
+correct_tf_category                                                
+1                       7.724138    13.310345   14.267241  0.241379
+2                      35.270833    33.583333   13.610677  0.984375
+3                      71.948052    75.441558   23.564935  0.889610
+4                     172.763462   213.869231   58.574519  0.838462
+5                     642.800000   642.800000  161.616071  1.000000
+6                    1759.929688  1773.078125  447.078125  0.988281
+{': Houses': {'counts': 1120, 'perc': 0.75},
+ ': Maesters': {'counts': 400, 'perc': 0.55},
+ ': bays': {'counts': 80, 'perc': 0.9},
+ ': cities-fortresses': {'counts': 160, 'perc': 0.525},
+ ': gods': {'counts': 80, 'perc': 0.55},
+ ': languages': {'counts': 80, 'perc': 0.75},
+ ': seas': {'counts': 80, 'perc': 0.9},
+ 'TOTAL': {'counts': 2000, 'perc': 0.696}}
+Number of tasks:       & 80 & 80 & 160 & 400 & 1120 & 2000  \\ \hline 
+ngram_lem_asoif_w1                &  90.0 & 55.0 & 52.5 & 55.0 & 75.0 & 69.6  \\ 
+
+
+**** Model: ngram_lem_asoif_w2  binary?: False
+**** Model: ngram_lem_asoif_w2  LOADED
+
+
+
+Total values of accuracy per **difficulty** category for: ngram_lem_asoif_w2
+            found_tf  correct_tf    avg_tf  correct
+difficulty                                         
+1            130.112     166.016   46.6565    0.604
+2            418.824     421.440  110.5125    0.672
+3            120.890     120.240   35.2125    0.538
+4            657.094     664.984  171.3985    0.976
+
+Deeper look into difficulty data, here only check out data for difficulty level: 1
+task_type
+: Houses               280
+: Maesters             100
+: bays                  20
+: cities-fortresses     40
+: gods                  20
+: languages             20
+: seas                  20
+Name: correct, dtype: int64
+                     found_tf  correct_tf   avg_tf  correct
+task_type                                                  
+: Houses                180.2       237.0  59.2500     0.80
+: Maesters               28.0        46.2  21.6750     0.20
+: bays                   74.6        75.2  20.6750     0.80
+: cities-fortresses     194.0       183.5  72.6875     0.45
+: gods                   28.0        41.0  27.3125     0.20
+: languages              24.8        43.0  10.7500     0.20
+: seas                   74.6        75.2  24.4250     0.80
+
+Deeper look into difficulty data, here check out data for all difficulty levels
+                                found_tf  correct_tf    avg_tf  correct
+task_type           difficulty                                         
+: Houses            1            180.200       237.0   59.2500    0.800
+                    2            648.000       648.0  162.0000    1.000
+                    3              8.800         8.8    2.2000    0.200
+                    4            753.800       753.8  188.4500    1.000
+: Maesters          1             28.000        46.2   21.6750    0.200
+                    2              0.000         0.0   10.1250    0.000
+                    3             43.400        43.4   20.9750    1.000
+                    4            436.600       436.6  119.2750    1.000
+: bays              1             74.600        75.2   20.6750    0.800
+                    2            180.200       237.0   61.1250    0.800
+                    3            646.000       646.0  163.3750    1.000
+                    4            753.800       753.8  190.3250    1.000
+: cities-fortresses 1            194.000       183.5   72.6875    0.450
+                    2            429.000       376.5  120.9375    0.200
+                    3             49.025        40.9   37.0375    0.825
+                    4            337.975       436.6  135.9625    0.700
+: gods              1             28.000        41.0   27.3125    0.200
+                    2              0.000         0.0   17.0625    0.000
+                    3            646.000       646.0  178.5625    1.000
+                    4            753.800       753.8  205.5125    1.000
+: languages         1             24.800        43.0   10.7500    0.200
+                    2            180.200       237.0   59.2500    0.800
+                    3            646.000       646.0  161.5000    1.000
+                    4            753.800       753.8  188.4500    1.000
+: seas              1             74.600        75.2   24.4250    0.800
+                    2            180.200       237.0   64.8750    0.800
+                    3            646.000       646.0  167.1250    1.000
+                    4            753.800       753.8  194.0750    1.000
+
+df.describe -- closer statistical look at global data
+         found_tf   correct_tf       avg_tf      correct
+count  2000.00000  2000.000000  2000.000000  2000.000000
+mean    331.73000   343.170000    90.945000     0.697500
+std     597.61501   595.433287   148.108272     0.459455
+min       0.00000     0.000000     0.000000     0.000000
+25%       0.00000     9.750000    10.812500     0.000000
+50%      89.00000    92.000000    30.750000     1.000000
+75%     256.00000   256.000000    71.000000     1.000000
+max    2696.00000  2696.000000   698.250000     1.000000
+Number of categories 7
+correlation between difficulty and correct result 0.23901860029765284
+correlation between correct-term frequency and correctness 0.3262854303002191
+correlation between   found-term frequency and correctness 0.3541694437900953
+correlation between average term frequency and correctness 0.31567040520878414
+
+***************************************************Total values of accuracy per **tf_category** for: ngram_lem_asoif_w2
+
+------------ found_tf_category
+                      found_tf   correct_tf      avg_tf   correct
+found_tf_category                                                
+1                    17.000000    17.000000   16.150000  1.000000
+2                    33.417989    33.417989   13.019841  1.000000
+3                    77.685714    77.685714   23.629464  1.000000
+4                   197.199584   197.012474   57.262474  0.906445
+5                   642.800000   642.800000  161.616071  1.000000
+6                  1779.138340  1779.138340  448.166008  1.000000
+found_tf_category
+1     25
+2    189
+3    280
+4    481
+5    140
+6    253
+dtype: int64
+
+------------ avg_tf_category
+                    found_tf   correct_tf      avg_tf   correct
+avg_tf_category                                                
+1                  22.875556    25.915556   10.650556  0.566667
+2                  97.421965    92.333333   31.720135  0.822736
+3                 179.165680   239.979290   67.727811  0.751479
+4                 879.204724   893.370079  227.465551  0.980315
+5                2153.567568  2153.567568  540.312500  1.000000
+6                        NaN          NaN         NaN       NaN
+avg_tf_category
+1    450
+2    519
+3    338
+4    254
+5    148
+6      0
+dtype: int64
+
+------------ correct_tf_category
+                        found_tf   correct_tf      avg_tf   correct
+correct_tf_category                                                
+1                      10.905172    13.310345   14.267241  0.215517
+2                      35.083333    33.583333   13.610677  0.984375
+3                      70.623377    75.441558   23.564935  0.909091
+4                     173.525000   213.869231   58.574519  0.838462
+5                     642.800000   642.800000  161.616071  1.000000
+6                    1759.929688  1773.078125  447.078125  0.988281
+correct_tf_category
+1    116
+2    192
+3    308
+4    520
+5    140
+6    256
+dtype: int64
+
+Total values of accuracy per **found_tf_category** category for: ngram_lem_asoif_w2
+                      found_tf   correct_tf      avg_tf   correct
+found_tf_category                                                
+1                    17.000000    17.000000   16.150000  1.000000
+2                    33.417989    33.417989   13.019841  1.000000
+3                    77.685714    77.685714   23.629464  1.000000
+4                   197.199584   197.012474   57.262474  0.906445
+5                   642.800000   642.800000  161.616071  1.000000
+6                  1779.138340  1779.138340  448.166008  1.000000
+
+Total values of accuracy per **avg_tf_category** category for: ngram_lem_asoif_w2
+                    found_tf   correct_tf      avg_tf   correct
+avg_tf_category                                                
+1                  22.875556    25.915556   10.650556  0.566667
+2                  97.421965    92.333333   31.720135  0.822736
+3                 179.165680   239.979290   67.727811  0.751479
+4                 879.204724   893.370079  227.465551  0.980315
+5                2153.567568  2153.567568  540.312500  1.000000
+6                        NaN          NaN         NaN       NaN
+
+Total values of accuracy per **correct_tf_category** category for: ngram_lem_asoif_w2
+                        found_tf   correct_tf      avg_tf   correct
+correct_tf_category                                                
+1                      10.905172    13.310345   14.267241  0.215517
+2                      35.083333    33.583333   13.610677  0.984375
+3                      70.623377    75.441558   23.564935  0.909091
+4                     173.525000   213.869231   58.574519  0.838462
+5                     642.800000   642.800000  161.616071  1.000000
+6                    1759.929688  1773.078125  447.078125  0.988281
+{': Houses': {'counts': 1120, 'perc': 0.75},
+ ': Maesters': {'counts': 400, 'perc': 0.55},
+ ': bays': {'counts': 80, 'perc': 0.9},
+ ': cities-fortresses': {'counts': 160, 'perc': 0.54375},
+ ': gods': {'counts': 80, 'perc': 0.55},
+ ': languages': {'counts': 80, 'perc': 0.75},
+ ': seas': {'counts': 80, 'perc': 0.9},
+ 'TOTAL': {'counts': 2000, 'perc': 0.6975}}
+Number of tasks:       & 80 & 80 & 160 & 400 & 1120 & 2000  \\ \hline 
+ngram_lem_asoif_w2                &  90.0 & 55.0 & 54.37 & 55.0 & 75.0 & 69.75  \\ 
+
+
+**** Model: ngram_lem_asoif_f  binary?: False
+**** Model: ngram_lem_asoif_f  LOADED
+
+
+
+Total values of accuracy per **difficulty** category for: ngram_lem_asoif_f
+            found_tf  correct_tf    avg_tf  correct
+difficulty                                         
+1            130.112     166.016   46.6565    0.604
+2            418.824     421.440  110.5125    0.672
+3            122.522     120.240   35.2125    0.520
+4            656.086     664.984  171.3985    0.970
+
+Deeper look into difficulty data, here only check out data for difficulty level: 1
+task_type
+: Houses               280
+: Maesters             100
+: bays                  20
+: cities-fortresses     40
+: gods                  20
+: languages             20
+: seas                  20
+Name: correct, dtype: int64
+                     found_tf  correct_tf   avg_tf  correct
+task_type                                                  
+: Houses                180.2       237.0  59.2500     0.80
+: Maesters               28.0        46.2  21.6750     0.20
+: bays                   74.6        75.2  20.6750     0.80
+: cities-fortresses     194.0       183.5  72.6875     0.45
+: gods                   28.0        41.0  27.3125     0.20
+: languages              24.8        43.0  10.7500     0.20
+: seas                   74.6        75.2  24.4250     0.80
+
+Deeper look into difficulty data, here check out data for all difficulty levels
+                                found_tf  correct_tf    avg_tf  correct
+task_type           difficulty                                         
+: Houses            1            180.200       237.0   59.2500    0.800
+                    2            648.000       648.0  162.0000    1.000
+                    3              8.800         8.8    2.2000    0.200
+                    4            753.800       753.8  188.4500    1.000
+: Maesters          1             28.000        46.2   21.6750    0.200
+                    2              0.000         0.0   10.1250    0.000
+                    3             43.400        43.4   20.9750    1.000
+                    4            436.600       436.6  119.2750    1.000
+: bays              1             74.600        75.2   20.6750    0.800
+                    2            180.200       237.0   61.1250    0.800
+                    3            646.000       646.0  163.3750    1.000
+                    4            753.800       753.8  190.3250    1.000
+: cities-fortresses 1            194.000       183.5   72.6875    0.450
+                    2            429.000       376.5  120.9375    0.200
+                    3             69.425        40.9   37.0375    0.600
+                    4            325.375       436.6  135.9625    0.625
+: gods              1             28.000        41.0   27.3125    0.200
+                    2              0.000         0.0   17.0625    0.000
+                    3            646.000       646.0  178.5625    1.000
+                    4            753.800       753.8  205.5125    1.000
+: languages         1             24.800        43.0   10.7500    0.200
+                    2            180.200       237.0   59.2500    0.800
+                    3            646.000       646.0  161.5000    1.000
+                    4            753.800       753.8  188.4500    1.000
+: seas              1             74.600        75.2   24.4250    0.800
+                    2            180.200       237.0   64.8750    0.800
+                    3            646.000       646.0  167.1250    1.000
+                    4            753.800       753.8  194.0750    1.000
+
+df.describe -- closer statistical look at global data
+          found_tf   correct_tf       avg_tf     correct
+count  2000.000000  2000.000000  2000.000000  2000.00000
+mean    331.886000   343.170000    90.945000     0.69150
+std     597.495031   595.433287   148.108272     0.46199
+min       0.000000     0.000000     0.000000     0.00000
+25%       0.000000     9.750000    10.812500     0.00000
+50%      89.000000    92.000000    30.750000     1.00000
+75%     256.000000   256.000000    71.000000     1.00000
+max    2696.000000  2696.000000   698.250000     1.00000
+Number of categories 7
+correlation between difficulty and correct result 0.22899313695399848
+correlation between correct-term frequency and correctness 0.3294966370096128
+correlation between   found-term frequency and correctness 0.3566413852986558
+correlation between average term frequency and correctness 0.31592255627166516
+
+***************************************************Total values of accuracy per **tf_category** for: ngram_lem_asoif_f
+
+------------ found_tf_category
+                      found_tf   correct_tf      avg_tf   correct
+found_tf_category                                                
+1                    17.000000    17.000000   16.150000  1.000000
+2                    33.595628    33.595628   11.911202  1.000000
+3                    77.530686    77.530686   23.204874  1.000000
+4                   195.120408   194.300000   57.168878  0.883673
+5                   642.800000   642.800000  161.616071  1.000000
+6                  1779.138340  1779.138340  448.166008  1.000000
+found_tf_category
+1     25
+2    183
+3    277
+4    490
+5    140
+6    253
+dtype: int64
+
+------------ avg_tf_category
+                    found_tf   correct_tf      avg_tf   correct
+avg_tf_category                                                
+1                  22.875556    25.915556   10.650556  0.566667
+2                  98.300578    92.333333   31.720135  0.815029
+3                 180.230769   239.979290   67.727811  0.736686
+4                 877.220472   893.370079  227.465551  0.968504
+5                2153.567568  2153.567568  540.312500  1.000000
+6                        NaN          NaN         NaN       NaN
+avg_tf_category
+1    450
+2    519
+3    338
+4    254
+5    148
+6      0
+dtype: int64
+
+------------ correct_tf_category
+                        found_tf   correct_tf      avg_tf   correct
+correct_tf_category                                                
+1                      10.905172    13.310345   14.267241  0.215517
+2                      38.583333    33.583333   13.610677  0.953125
+3                      71.090909    75.441558   23.564935  0.899351
+4                     172.555769   213.869231   58.574519  0.832692
+5                     642.800000   642.800000  161.616071  1.000000
+6                    1759.929688  1773.078125  447.078125  0.988281
+correct_tf_category
+1    116
+2    192
+3    308
+4    520
+5    140
+6    256
+dtype: int64
+
+Total values of accuracy per **found_tf_category** category for: ngram_lem_asoif_f
+                      found_tf   correct_tf      avg_tf   correct
+found_tf_category                                                
+1                    17.000000    17.000000   16.150000  1.000000
+2                    33.595628    33.595628   11.911202  1.000000
+3                    77.530686    77.530686   23.204874  1.000000
+4                   195.120408   194.300000   57.168878  0.883673
+5                   642.800000   642.800000  161.616071  1.000000
+6                  1779.138340  1779.138340  448.166008  1.000000
+
+Total values of accuracy per **avg_tf_category** category for: ngram_lem_asoif_f
+                    found_tf   correct_tf      avg_tf   correct
+avg_tf_category                                                
+1                  22.875556    25.915556   10.650556  0.566667
+2                  98.300578    92.333333   31.720135  0.815029
+3                 180.230769   239.979290   67.727811  0.736686
+4                 877.220472   893.370079  227.465551  0.968504
+5                2153.567568  2153.567568  540.312500  1.000000
+6                        NaN          NaN         NaN       NaN
+
+Total values of accuracy per **correct_tf_category** category for: ngram_lem_asoif_f
+                        found_tf   correct_tf      avg_tf   correct
+correct_tf_category                                                
+1                      10.905172    13.310345   14.267241  0.215517
+2                      38.583333    33.583333   13.610677  0.953125
+3                      71.090909    75.441558   23.564935  0.899351
+4                     172.555769   213.869231   58.574519  0.832692
+5                     642.800000   642.800000  161.616071  1.000000
+6                    1759.929688  1773.078125  447.078125  0.988281
+{': Houses': {'counts': 1120, 'perc': 0.75},
+ ': Maesters': {'counts': 400, 'perc': 0.55},
+ ': bays': {'counts': 80, 'perc': 0.9},
+ ': cities-fortresses': {'counts': 160, 'perc': 0.46875},
+ ': gods': {'counts': 80, 'perc': 0.55},
+ ': languages': {'counts': 80, 'perc': 0.75},
+ ': seas': {'counts': 80, 'perc': 0.9},
+ 'TOTAL': {'counts': 2000, 'perc': 0.6915}}
+Number of tasks:       & 80 & 80 & 160 & 400 & 1120 & 2000  \\ \hline 
+ngram_lem_asoif_f                &  90.0 & 55.0 & 46.88 & 55.0 & 75.0 & 69.15  \\ 
+
+
+
+
+
+================================================================================================================
+****************************************************************************************************************
+================================================================================================================
+
+
+
+
+
+**** Model: ngram_lem_hp_w1  binary?: False
+**** Model: ngram_lem_hp_w1  LOADED
+C:\Program Files\Python36\lib\site-packages\gensim\matutils.py:737: FutureWarning: Conversion of the second argument of issubdtype from `int` to `np.signedinteger` is deprecated. In future, it will be treated as `np.int32 == np.dtype(int).type`.
+
+  if np.issubdtype(vec.dtype, np.int):
+
+
+Total values of accuracy per **difficulty** category for: ngram_lem_hp_w1
+               found_tf   correct_tf       avg_tf   correct
+difficulty                                                 
+1            802.008333   691.560417   224.035937  0.925000
+2            302.872917   154.672917    89.814063  0.400000
+3           5233.600000  5080.670833  1321.313542  0.725000
+4            335.333333   261.052083   116.408854  0.970833
+
+Deeper look into difficulty data, here only check out data for difficulty level: 1
+task_type
+: Slytherin-members                    5
+: closest-friends                      5
+: geographical-objects               420
+: members-of-Order_of_the_Phoenix     20
+: ministers-for-magic                  5
+: ministry_of_magic-employees         20
+: unforgivable-curses                  5
+Name: correct, dtype: int64
+                                   found_tf   ...     correct
+task_type                                     ...            
+: Slytherin-members                   199.8   ...        0.40
+: closest-friends                   11029.4   ...        0.00
+: geographical-objects                766.8   ...        1.00
+: members-of-Order_of_the_Phoenix      26.1   ...        0.60
+: ministers-for-magic                  31.0   ...        0.00
+: ministry_of_magic-employees         303.1   ...        0.45
+: unforgivable-curses                   4.6   ...        0.20
+
+[7 rows x 4 columns]
+
+Deeper look into difficulty data, here check out data for all difficulty levels
+                                              found_tf   ...     correct
+task_type                         difficulty             ...            
+: Slytherin-members               1             199.80   ...        0.40
+                                  2              67.00   ...        0.00
+                                  3              67.00   ...        0.00
+                                  4              33.80   ...        1.00
+: closest-friends                 1           11029.40   ...        0.00
+                                  2           14700.20   ...        0.00
+                                  3           18371.00   ...        0.00
+                                  4            7356.20   ...        0.20
+: geographical-objects            1             766.80   ...        1.00
+                                  2             108.00   ...        0.40
+                                  3            5754.80   ...        0.80
+                                  4             291.00   ...        1.00
+: members-of-Order_of_the_Phoenix 1              26.10   ...        0.60
+                                  2             291.10   ...        0.65
+                                  3              30.40   ...        0.20
+                                  4              33.80   ...        1.00
+: ministers-for-magic             1              31.00   ...        0.00
+                                  2            3691.00   ...        0.80
+                                  3             287.60   ...        0.60
+                                  4              26.80   ...        0.20
+: ministry_of_magic-employees     1             303.10   ...        0.45
+                                  2              23.50   ...        0.15
+                                  3              24.25   ...        0.00
+                                  4              28.90   ...        0.75
+: unforgivable-curses             1               4.60   ...        0.20
+                                  2             287.20   ...        0.80
+                                  3              78.20   ...        1.00
+                                  4              80.40   ...        0.80
+
+[28 rows x 4 columns]
+
+df.describe -- closer statistical look at global data
+           found_tf    correct_tf       avg_tf      correct
+count   1920.000000   1920.000000  1920.000000  1920.000000
+mean    1668.453646   1546.989063   437.893099     0.755208
+std     4185.618813   3930.836175  1071.472897     0.430076
+min        0.000000      0.000000     0.000000     0.000000
+25%       10.000000     17.000000    11.500000     1.000000
+50%      120.000000    120.000000    56.250000     1.000000
+75%      509.000000    509.000000   132.000000     1.000000
+max    18371.000000  18371.000000  4810.750000     1.000000
+Number of categories 7
+correlation between difficulty and correct result 0.12026383322431086
+correlation between correct-term frequency and correctness 0.21560461317858295
+correlation between   found-term frequency and correctness 0.15149605034025487
+correlation between average term frequency and correctness 0.12338732648595233
+
+***************************************************Total values of accuracy per **tf_category** for: ngram_lem_hp_w1
+
+------------ found_tf_category
+                      found_tf   correct_tf       avg_tf   correct
+found_tf_category                                                 
+1                     8.057143    17.400000   139.669048  0.976190
+2                    37.177340    40.349754    19.894089  0.561576
+3                    55.431579    51.768421    17.013158  0.931579
+4                   280.268966   280.268966    72.152299  1.000000
+5                   646.978022   646.978022   164.479396  1.000000
+6                  8387.444444  7655.715100  2098.841168  0.960114
+found_tf_category
+1    210
+2    203
+3    190
+4    435
+5    182
+6    351
+dtype: int64
+
+------------ avg_tf_category
+                     found_tf    correct_tf       avg_tf   correct
+avg_tf_category                                                   
+1                   22.837607     25.102564     9.343661  0.641026
+2                   74.438503     72.454545    29.564171  0.700535
+3                  214.514535    270.360465    69.548692  0.752907
+4                  567.894161    572.394161   145.817518  0.992701
+5                 3582.500000   3582.500000   897.208333  1.000000
+6                12392.714286  11044.169312  3248.980159  0.899471
+avg_tf_category
+1    702
+2    187
+3    344
+4    274
+5    168
+6    189
+dtype: int64
+
+------------ correct_tf_category
+                        found_tf   correct_tf       avg_tf   correct
+correct_tf_category                                                 
+1                     273.907767    11.269417    84.916869  0.497573
+2                     627.160256    39.794872   194.504808  0.730769
+3                      53.755435    54.902174    41.394022  0.961957
+4                     267.935115   270.608779    87.264313  0.830153
+5                     633.532258   648.752688   214.447581  0.978495
+6                    7972.697329  7972.697329  1994.795252  1.000000
+correct_tf_category
+1    412
+2    156
+3    184
+4    524
+5    186
+6    337
+dtype: int64
+
+Total values of accuracy per **found_tf_category** category for: ngram_lem_hp_w1
+                      found_tf   correct_tf       avg_tf   correct
+found_tf_category                                                 
+1                     8.057143    17.400000   139.669048  0.976190
+2                    37.177340    40.349754    19.894089  0.561576
+3                    55.431579    51.768421    17.013158  0.931579
+4                   280.268966   280.268966    72.152299  1.000000
+5                   646.978022   646.978022   164.479396  1.000000
+6                  8387.444444  7655.715100  2098.841168  0.960114
+
+Total values of accuracy per **avg_tf_category** category for: ngram_lem_hp_w1
+                     found_tf    correct_tf       avg_tf   correct
+avg_tf_category                                                   
+1                   22.837607     25.102564     9.343661  0.641026
+2                   74.438503     72.454545    29.564171  0.700535
+3                  214.514535    270.360465    69.548692  0.752907
+4                  567.894161    572.394161   145.817518  0.992701
+5                 3582.500000   3582.500000   897.208333  1.000000
+6                12392.714286  11044.169312  3248.980159  0.899471
+
+Total values of accuracy per **correct_tf_category** category for: ngram_lem_hp_w1
+                        found_tf   correct_tf       avg_tf   correct
+correct_tf_category                                                 
+1                     273.907767    11.269417    84.916869  0.497573
+2                     627.160256    39.794872   194.504808  0.730769
+3                      53.755435    54.902174    41.394022  0.961957
+4                     267.935115   270.608779    87.264313  0.830153
+5                     633.532258   648.752688   214.447581  0.978495
+6                    7972.697329  7972.697329  1994.795252  1.000000
+{': Slytherin-members': {'counts': 20, 'perc': 0.35},
+ ': closest-friends': {'counts': 20, 'perc': 0.05},
+ ': geographical-objects': {'counts': 1680, 'perc': 0.8},
+ ': members-of-Order_of_the_Phoenix': {'counts': 80, 'perc': 0.6125},
+ ': ministers-for-magic': {'counts': 20, 'perc': 0.4},
+ ': ministry_of_magic-employees': {'counts': 80, 'perc': 0.3375},
+ ': unforgivable-curses': {'counts': 20, 'perc': 0.7},
+ 'TOTAL': {'counts': 1920, 'perc': 0.7552083333333334}}
+Number of tasks:       & 1680 & 80 & 80 & 1920  \\ \hline 
+ngram_lem_hp_w1                &  80.0 & 33.75 & 61.25 & 75.52  \\ 
+
+
+**** Model: ngram_lem_hp_w2  binary?: False
+**** Model: ngram_lem_hp_w2  LOADED
+
+
+
+Total values of accuracy per **difficulty** category for: ngram_lem_hp_w2
+               found_tf   correct_tf       avg_tf   correct
+difficulty                                                 
+1            724.302083   691.560417   224.035937  0.906250
+2            180.502083   154.672917    89.814063  0.370833
+3           5040.841667  5080.670833  1321.313542  0.722917
+4            297.887500   261.052083   116.408854  0.935417
+
+Deeper look into difficulty data, here only check out data for difficulty level: 1
+task_type
+: Slytherin-members                    5
+: closest-friends                      5
+: geographical-objects               420
+: members-of-Order_of_the_Phoenix     20
+: ministers-for-magic                  5
+: ministry_of_magic-employees         20
+: unforgivable-curses                  5
+Name: correct, dtype: int64
+                                   found_tf   ...     correct
+task_type                                     ...            
+: Slytherin-members                  209.00   ...        0.20
+: closest-friends                   3687.80   ...        0.00
+: geographical-objects               766.80   ...        1.00
+: members-of-Order_of_the_Phoenix     35.55   ...        0.15
+: ministers-for-magic                 31.00   ...        0.00
+: ministry_of_magic-employees        261.80   ...        0.50
+: unforgivable-curses                  4.60   ...        0.20
+
+[7 rows x 4 columns]
+
+Deeper look into difficulty data, here check out data for all difficulty levels
+                                              found_tf   ...     correct
+task_type                         difficulty             ...            
+: Slytherin-members               1             209.00   ...        0.20
+                                  2              67.00   ...        0.00
+                                  3              67.00   ...        0.00
+                                  4              67.00   ...        0.00
+: closest-friends                 1            3687.80   ...        0.00
+                                  2            7358.60   ...        0.00
+                                  3              17.00   ...        0.00
+                                  4            3697.80   ...        0.20
+: geographical-objects            1             766.80   ...        1.00
+                                  2             108.00   ...        0.40
+                                  3            5754.80   ...        0.80
+                                  4             291.00   ...        1.00
+: members-of-Order_of_the_Phoenix 1              35.55   ...        0.15
+                                  2             104.05   ...        0.20
+                                  3              30.40   ...        0.20
+                                  4              35.45   ...        0.55
+: ministers-for-magic             1              31.00   ...        0.00
+                                  2              31.00   ...        0.00
+                                  3             136.80   ...        0.40
+                                  4              25.40   ...        0.20
+: ministry_of_magic-employees     1             261.80   ...        0.50
+                                  2              24.05   ...        0.10
+                                  3              24.25   ...        0.00
+                                  4              35.20   ...        0.60
+: unforgivable-curses             1               4.60   ...        0.20
+                                  2             287.20   ...        0.80
+                                  3              78.20   ...        1.00
+                                  4              80.40   ...        0.80
+
+[28 rows x 4 columns]
+
+df.describe -- closer statistical look at global data
+           found_tf    correct_tf       avg_tf      correct
+count   1920.000000   1920.000000  1920.000000  1920.000000
+mean    1560.883333   1546.989063   437.893099     0.733854
+std     3991.296624   3930.836175  1071.472897     0.442057
+min        0.000000      0.000000     0.000000     0.000000
+25%       10.000000     17.000000    11.500000     0.000000
+50%       67.000000    120.000000    56.250000     1.000000
+75%      509.000000    509.000000   132.000000     1.000000
+max    18371.000000  18371.000000  4810.750000     1.000000
+Number of categories 7
+correlation between difficulty and correct result 0.11120684160958819
+correlation between correct-term frequency and correctness 0.2213376648488928
+correlation between   found-term frequency and correctness 0.21220280144526482
+correlation between average term frequency and correctness 0.13221275044658343
+
+***************************************************Total values of accuracy per **tf_category** for: ngram_lem_hp_w2
+
+------------ found_tf_category
+                      found_tf   correct_tf       avg_tf   correct
+found_tf_category                                                 
+1                     7.860000    17.785000   351.835000  0.925000
+2                    37.718615   141.238095    45.550866  0.463203
+3                    55.670103    50.989691    41.011598  0.902062
+4                   280.055944   280.055944    71.928904  1.000000
+5                   642.683616   642.683616   163.055085  1.000000
+6                  8064.447059  7848.617647  2017.801471  0.988235
+found_tf_category
+1    200
+2    231
+3    194
+4    429
+5    177
+6    340
+dtype: int64
+
+------------ avg_tf_category
+                     found_tf    correct_tf       avg_tf   correct
+avg_tf_category                                                   
+1                   23.215100     25.102564     9.343661  0.625356
+2                   76.192513     72.454545    29.564171  0.604278
+3                  213.398256    270.360465    69.548692  0.744186
+4                  549.916058    572.394161   145.817518  0.963504
+5                 3582.500000   3582.500000   897.208333  1.000000
+6                11324.894180  11044.169312  3248.980159  0.894180
+avg_tf_category
+1    702
+2    187
+3    344
+4    274
+5    168
+6    189
+dtype: int64
+
+------------ correct_tf_category
+                        found_tf   correct_tf       avg_tf   correct
+correct_tf_category                                                 
+1                      52.325243    11.269417    84.916869  0.449029
+2                     392.839744    39.794872   194.504808  0.685897
+3                      53.880435    54.902174    41.394022  0.951087
+4                     230.017176   270.608779    87.264313  0.818702
+5                     613.129032   648.752688   214.447581  0.951613
+6                    7918.275964  7972.697329  1994.795252  0.997033
+correct_tf_category
+1    412
+2    156
+3    184
+4    524
+5    186
+6    337
+dtype: int64
+
+Total values of accuracy per **found_tf_category** category for: ngram_lem_hp_w2
+                      found_tf   correct_tf       avg_tf   correct
+found_tf_category                                                 
+1                     7.860000    17.785000   351.835000  0.925000
+2                    37.718615   141.238095    45.550866  0.463203
+3                    55.670103    50.989691    41.011598  0.902062
+4                   280.055944   280.055944    71.928904  1.000000
+5                   642.683616   642.683616   163.055085  1.000000
+6                  8064.447059  7848.617647  2017.801471  0.988235
+
+Total values of accuracy per **avg_tf_category** category for: ngram_lem_hp_w2
+                     found_tf    correct_tf       avg_tf   correct
+avg_tf_category                                                   
+1                   23.215100     25.102564     9.343661  0.625356
+2                   76.192513     72.454545    29.564171  0.604278
+3                  213.398256    270.360465    69.548692  0.744186
+4                  549.916058    572.394161   145.817518  0.963504
+5                 3582.500000   3582.500000   897.208333  1.000000
+6                11324.894180  11044.169312  3248.980159  0.894180
+
+Total values of accuracy per **correct_tf_category** category for: ngram_lem_hp_w2
+                        found_tf   correct_tf       avg_tf   correct
+correct_tf_category                                                 
+1                      52.325243    11.269417    84.916869  0.449029
+2                     392.839744    39.794872   194.504808  0.685897
+3                      53.880435    54.902174    41.394022  0.951087
+4                     230.017176   270.608779    87.264313  0.818702
+5                     613.129032   648.752688   214.447581  0.951613
+6                    7918.275964  7972.697329  1994.795252  0.997033
+{': Slytherin-members': {'counts': 20, 'perc': 0.05},
+ ': closest-friends': {'counts': 20, 'perc': 0.05},
+ ': geographical-objects': {'counts': 1680, 'perc': 0.8},
+ ': members-of-Order_of_the_Phoenix': {'counts': 80, 'perc': 0.275},
+ ': ministers-for-magic': {'counts': 20, 'perc': 0.15},
+ ': ministry_of_magic-employees': {'counts': 80, 'perc': 0.3},
+ ': unforgivable-curses': {'counts': 20, 'perc': 0.7},
+ 'TOTAL': {'counts': 1920, 'perc': 0.7338541666666667}}
+Number of tasks:       & 1680 & 80 & 80 & 1920  \\ \hline 
+ngram_lem_hp_w2                &  80.0 & 30.0 & 27.5 & 73.39  \\ 
+
+
+**** Model: ngram_lem_hp_f  binary?: False
+**** Model: ngram_lem_hp_f  LOADED
+
+
+
+Total values of accuracy per **difficulty** category for: ngram_lem_hp_f
+               found_tf   correct_tf       avg_tf   correct
+difficulty                                                 
+1            872.297917   691.560417   224.035937  0.906250
+2            338.012500   154.672917    89.814063  0.383333
+3           5231.052083  5080.670833  1321.313542  0.712500
+4            336.206250   261.052083   116.408854  0.935417
+
+Deeper look into difficulty data, here only check out data for difficulty level: 1
+task_type
+: Slytherin-members                    5
+: closest-friends                      5
+: geographical-objects               420
+: members-of-Order_of_the_Phoenix     20
+: ministers-for-magic                  5
+: ministry_of_magic-employees         20
+: unforgivable-curses                  5
+Name: correct, dtype: int64
+                                   found_tf   ...     correct
+task_type                                     ...            
+: Slytherin-members                   53.00   ...         0.4
+: closest-friends                  18371.00   ...         0.0
+: geographical-objects               766.80   ...         1.0
+: members-of-Order_of_the_Phoenix     34.50   ...         0.3
+: ministers-for-magic                 31.00   ...         0.0
+: ministry_of_magic-employees        182.95   ...         0.3
+: unforgivable-curses                  4.60   ...         0.2
+
+[7 rows x 4 columns]
+
+Deeper look into difficulty data, here check out data for all difficulty levels
+                                              found_tf   ...     correct
+task_type                         difficulty             ...            
+: Slytherin-members               1              53.00   ...        0.40
+                                  2              67.00   ...        0.00
+                                  3              67.00   ...        0.00
+                                  4              60.00   ...        0.40
+: closest-friends                 1           18371.00   ...        0.00
+                                  2           18371.00   ...        0.00
+                                  3           18371.00   ...        0.00
+                                  4            7368.60   ...        0.20
+: geographical-objects            1             766.80   ...        1.00
+                                  2             108.00   ...        0.40
+                                  3            5754.80   ...        0.80
+                                  4             291.00   ...        1.00
+: members-of-Order_of_the_Phoenix 1              34.50   ...        0.30
+                                  2             215.35   ...        0.35
+                                  3              33.40   ...        0.05
+                                  4              41.15   ...        0.40
+: ministers-for-magic             1              31.00   ...        0.00
+                                  2            3696.60   ...        0.40
+                                  3              31.00   ...        0.00
+                                  4              25.40   ...        0.20
+: ministry_of_magic-employees     1             182.95   ...        0.30
+                                  2              23.50   ...        0.15
+                                  3              24.25   ...        0.00
+                                  4              33.20   ...        0.65
+: unforgivable-curses             1               4.60   ...        0.20
+                                  2             287.20   ...        0.80
+                                  3              78.20   ...        1.00
+                                  4              80.40   ...        0.80
+
+[28 rows x 4 columns]
+
+df.describe -- closer statistical look at global data
+           found_tf    correct_tf       avg_tf      correct
+count   1920.000000   1920.000000  1920.000000  1920.000000
+mean    1694.392188   1546.989063   437.893099     0.734375
+std     4237.644392   3930.836175  1071.472897     0.441781
+min        0.000000      0.000000     0.000000     0.000000
+25%       10.000000     17.000000    11.500000     0.000000
+50%       67.000000    120.000000    56.250000     1.000000
+75%      509.000000    509.000000   132.000000     1.000000
+max    18371.000000  18371.000000  4810.750000     1.000000
+Number of categories 7
+correlation between difficulty and correct result 0.1054751979511755
+correlation between correct-term frequency and correctness 0.22638344882084124
+correlation between   found-term frequency and correctness 0.15214095314711412
+correlation between average term frequency and correctness 0.13681181901203487
+
+***************************************************Total values of accuracy per **tf_category** for: ngram_lem_hp_f
+
+------------ found_tf_category
+                      found_tf   correct_tf       avg_tf   correct
+found_tf_category                                                 
+1                     7.304813     7.470588    53.877005  0.989305
+2                    37.782051    60.700855    25.599359  0.461538
+3                    55.552083    55.067708    42.042969  0.916667
+4                   279.983607   279.983607    71.853044  1.000000
+5                   642.378531   642.378531   162.899718  1.000000
+6                  8472.050847  7596.259887  2121.367938  0.951977
+found_tf_category
+1    187
+2    234
+3    192
+4    427
+5    177
+6    354
+dtype: int64
+
+------------ avg_tf_category
+                     found_tf    correct_tf       avg_tf   correct
+avg_tf_category                                                   
+1                   23.398860     25.102564     9.343661  0.618234
+2                   75.481283     72.454545    29.564171  0.641711
+3                  212.991279    270.360465    69.548692  0.741279
+4                  548.233577    572.394161   145.817518  0.959854
+5                 3582.500000   3582.500000   897.208333  1.000000
+6                12684.375661  11044.169312  3248.980159  0.899471
+avg_tf_category
+1    702
+2    187
+3    344
+4    274
+5    168
+6    189
+dtype: int64
+
+------------ correct_tf_category
+                        found_tf   correct_tf       avg_tf   correct
+correct_tf_category                                                 
+1                     275.213592    11.269417    84.916869  0.449029
+2                     627.794872    39.794872   194.504808  0.692308
+3                      53.831522    54.902174    41.394022  0.956522
+4                     299.061069   270.608779    87.264313  0.814885
+5                     810.096774   648.752688   214.447581  0.951613
+6                    7972.697329  7972.697329  1994.795252  1.000000
+correct_tf_category
+1    412
+2    156
+3    184
+4    524
+5    186
+6    337
+dtype: int64
+
+Total values of accuracy per **found_tf_category** category for: ngram_lem_hp_f
+                      found_tf   correct_tf       avg_tf   correct
+found_tf_category                                                 
+1                     7.304813     7.470588    53.877005  0.989305
+2                    37.782051    60.700855    25.599359  0.461538
+3                    55.552083    55.067708    42.042969  0.916667
+4                   279.983607   279.983607    71.853044  1.000000
+5                   642.378531   642.378531   162.899718  1.000000
+6                  8472.050847  7596.259887  2121.367938  0.951977
+
+Total values of accuracy per **avg_tf_category** category for: ngram_lem_hp_f
+                     found_tf    correct_tf       avg_tf   correct
+avg_tf_category                                                   
+1                   23.398860     25.102564     9.343661  0.618234
+2                   75.481283     72.454545    29.564171  0.641711
+3                  212.991279    270.360465    69.548692  0.741279
+4                  548.233577    572.394161   145.817518  0.959854
+5                 3582.500000   3582.500000   897.208333  1.000000
+6                12684.375661  11044.169312  3248.980159  0.899471
+
+Total values of accuracy per **correct_tf_category** category for: ngram_lem_hp_f
+                        found_tf   correct_tf       avg_tf   correct
+correct_tf_category                                                 
+1                     275.213592    11.269417    84.916869  0.449029
+2                     627.794872    39.794872   194.504808  0.692308
+3                      53.831522    54.902174    41.394022  0.956522
+4                     299.061069   270.608779    87.264313  0.814885
+5                     810.096774   648.752688   214.447581  0.951613
+6                    7972.697329  7972.697329  1994.795252  1.000000
+{': Slytherin-members': {'counts': 20, 'perc': 0.2},
+ ': closest-friends': {'counts': 20, 'perc': 0.05},
+ ': geographical-objects': {'counts': 1680, 'perc': 0.8},
+ ': members-of-Order_of_the_Phoenix': {'counts': 80, 'perc': 0.275},
+ ': ministers-for-magic': {'counts': 20, 'perc': 0.15},
+ ': ministry_of_magic-employees': {'counts': 80, 'perc': 0.275},
+ ': unforgivable-curses': {'counts': 20, 'perc': 0.7},
+ 'TOTAL': {'counts': 1920, 'perc': 0.734375}}
+Number of tasks:       & 1680 & 80 & 80 & 1920  \\ \hline 
+ngram_lem_hp_f                &  80.0 & 27.5 & 27.5 & 73.44  \\ 

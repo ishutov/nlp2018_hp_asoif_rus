@@ -169,10 +169,10 @@ def analyze_with_pandas(method, task_results):
         print("correlation between correct-term frequency and correctness", df['correct_tf'].corr(df['correct']))
         print("correlation between   found-term frequency and correctness", df['found_tf'].corr(df['correct']))
         print("correlation between average term frequency and correctness", df['avg_tf'].corr(df['correct']))
-        print("correlation between frequency bin and correctness",
-              df['found_tf_category'].astype(int).corr(df['correct']))
-        print("correlation between avg_frequency bin and correctness",
-              df['avg_tf_category'].astype(int).corr(df['correct']))
+        # print("correlation between frequency bin and correctness",
+        #       df['found_tf_category'].astype(int).corr(df['correct']))
+        # print("correlation between avg_frequency bin and correctness",
+        #       df['avg_tf_category'].astype(int).corr(df['correct']))
 
         print(
             "\n***************************************************Total values of accuracy per **tf_category** for: " + method)
