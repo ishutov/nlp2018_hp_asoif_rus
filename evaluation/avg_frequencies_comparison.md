@@ -7,8 +7,8 @@
 
 | Ngram             | eng    | rus   | rus_lem  |
 |:--------------------|:-------|:------|:---------|
-| Average frequencies |  | 400.14 | 422.47 |
-| Count words < 5     |    | 24     | 56    |
+| Average frequencies | 456.64 | 400.14 | 422.47 |
+| Count words < 5     |  5  | 24     | 56    |
 
 ### ASOIF
 
@@ -19,5 +19,5 @@
 
 | Ngram             | eng    | rus   | rus_lem  |
 |:--------------------|:-------|:------|:---------|
-| Average frequencies |  | 236.19 | 258.57 |
-| Count words < 5     |    | 30     | 59    |
+| Average frequencies | 276.62 | 236.19 | 258.57 |
+| Count words < 5     |  6  | 30     | 59    |
