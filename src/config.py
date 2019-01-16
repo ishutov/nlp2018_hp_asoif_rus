@@ -64,17 +64,35 @@ if BOOK_SERIES == "ASOIF":
         ('lem_asoif_f', 'vec'),
         ('lem_asoif_f1', 'vec'),
         ('lem_asoif_f2', 'vec'),
+
+        # # w2vec models
+        # ('asoif_w', 'vec'),
+        # ('asoif_w1', 'vec'),
+        # ('asoif_w2', 'vec'),
+        # ('asoif_w3', 'vec'),
+        # ('asoif_w4', 'vec'),
+        # # fastText models
+        # ('asoif_f', 'vec'),
+        # ('asoif_f1', 'vec'),
+        # ('asoif_f2', 'vec'),
+
         # ('ruwikiruscorpora_upos_skipgram_300_2_2018.vec', 'vec'),
         # ('wiki.ru.vec', 'vec'),
     ]
 
     if NGRAMS:
         METHODS = [
-            ('ngram_lem_asoif_w1', 'vec'),
+            # ('ngram_lem_asoif_w1', 'vec'),
+            # ## Skip-gram, window-size 12, 300dim, hier.softmax, iter 15, no neg-sampling
+            # ('ngram_lem_asoif_w2', 'vec'),
+            # ## Skip-gram, window-size 12, 300dim, hier.softmax, iter 15, -negative 15
+            # ('ngram_lem_asoif_f', 'vec'),  # default and: -epoch 25 -ws 12
+
+            ('ngram_asoif_w1', 'vec'),
             ## Skip-gram, window-size 12, 300dim, hier.softmax, iter 15, no neg-sampling
-            ('ngram_lem_asoif_w2', 'vec'),
+            ('ngram_asoif_w2', 'vec'),
             ## Skip-gram, window-size 12, 300dim, hier.softmax, iter 15, -negative 15
-            ('ngram_lem_asoif_f', 'vec'),  # default and: -epoch 25 -ws 12
+            ('ngram_asoif_f', 'vec'),  # default and: -epoch 25 -ws 12
         ]
 
 if BOOK_SERIES == "HP":
@@ -89,15 +107,31 @@ if BOOK_SERIES == "HP":
         ('lem_hp_f', 'vec'),
         ('lem_hp_f1', 'vec'),
         ('lem_hp_f2', 'vec'),
+
+        # # w2vec models
+        # ('hp_w', 'vec'),
+        # ('hp_w1', 'vec'),
+        # ('hp_w2', 'vec'),
+        # ('hp_w3', 'vec'),
+        # ('hp_w4', 'vec'),
+        # # fastText models
+        # ('hp_f', 'vec'),
+        # ('hp_f1', 'vec'),
+        # ('hp_f2', 'vec'),
+
         # ('ruwikiruscorpora_upos_skipgram_300_2_2018.vec', 'vec'),
         # ('wiki.ru.vec', 'vec'),
     ]
 
     if NGRAMS:
         METHODS = [
-            ('ngram_lem_hp_w1', 'vec'),
-            ('ngram_lem_hp_w2', 'vec'),
-            ('ngram_lem_hp_f', 'vec'),  # for paper!, 25 epoch
+            # ('ngram_lem_hp_w1', 'vec'),
+            # ('ngram_lem_hp_w2', 'vec'),
+            # ('ngram_lem_hp_f', 'vec'),  # for paper!, 25 epoch
+
+            ('ngram_hp_w1', 'vec'),
+            ('ngram_hp_w2', 'vec'),
+            ('ngram_hp_f', 'vec'),  # for paper!, 25 epoch
         ]
 
 # -----------------------------------------------------
