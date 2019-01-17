@@ -18,7 +18,6 @@ from w2v_dataset_helpers import load_models, print_latex_version
 # read the analogies evaluation data from the path defined in config.py
 analogies_data = open(ANALOGIES_FILE, encoding='utf-8').readlines()
 
-
 # evaluate each of the embedding methods defined in config.py
 def evaluate_analogies(method, emb_type):
     # load model and init our data capture variables
