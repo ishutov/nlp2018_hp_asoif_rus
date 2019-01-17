@@ -40,7 +40,7 @@ def train_model_w2v_ngram(sentences, arg):
     if arg == 'w1':
         return Word2Vec(sentences, size=300, negative=0, sg=1, hs=1, iter=15, window=12)
     elif arg == 'w2':
-        return Word2Vec(sentences, size=300, negative=15, sg=1, hs=1, iter=15, window=12)
+        return Word2Vec(sentences, size=300, negative=15, sg=1, hs=0, iter=15, window=12)
     else:
         raise Exception("Please choose: w{1,2,3,4}")
 

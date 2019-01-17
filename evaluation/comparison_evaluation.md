@@ -73,7 +73,7 @@ Analogies evaluation (***N-GRAM***)
 |---------------------------------|---------|--------|---------|
 |**Model**|character-creature|character-where_they_work|**total**|
 |ngram_hp_w1                              | 0.0 | 0.0 | **0.0**
-|ngram_hp_w2                | 0.0 | 0.0 | **0.0**
+|ngram_hp_w2                | 0.0 | 0.0 | **2.08**
 |ngram_hp_f                | 0.0 | 0.0 | **4.17**
 </td><td>
 
@@ -81,7 +81,7 @@ Analogies evaluation (***N-GRAM***)
 |---------------------------------|---------|--------|---------|
 |**Model**|child-father|name-nickname|**total**|
 ngram_asoif_w1                | 0.0 | 0 | **0.0**
-ngram_asoif_w2                | 1.82 | 0 | **1.82**
+ngram_asoif_w2                | 0.91 | 0 | **0.91**
 ngram_asoif_f                | 0.0 | 0 | **0.0**
 </td></tr> </table>
 
@@ -93,7 +93,7 @@ ngram_asoif_f                | 0.0 | 0 | **0.0**
 |---------------------------------|---------|--------|---------|
 |**Model**|character-creature|character-where_they_work|**total**|
 |ngram_lem_hp_w1                              | 11.11 | 0.0 | **6.82**
-|ngram_lem_hp_w2                | 5.56 | 0.0 | **9.09**
+|ngram_lem_hp_w2                | 0.0 | 0.0 | **4.55**
 |ngram_lem_hp_f                | 0.0 | 0.0 | **0.0**|
 </td><td>
 
@@ -101,7 +101,7 @@ ngram_asoif_f                | 0.0 | 0 | **0.0**
 |---------------------------------|---------|--------|---------|
 |**Model**|name-nickname|character-where_they_work|**total**|
 ngram_lem_asoif_w1                | 10.0 | 0.0 | **10.0**
-ngram_lem_asoif_w2                | 11.11 | 0.0 | **11.11**
+ngram_lem_asoif_w2                | 1.11 | 0 | **1.11**
 ngram_lem_asoif_f                | 0.0 | 0.0 | **0.0**
 </td></tr> </table>  
 
@@ -180,7 +180,7 @@ ngram_lem_asoif_f                | 0.0 | 0.0 | **0.0**
 |---------------------------------|---------|--------|---------|--------|
 |**Model**| geographical-objects|ministry_of_magic-employees | members-of-Order_of_the_Phoenix|**total**|
 ngram_hp_w1                | 71.67 | 21.25 | 40.0 | **67.76**
-ngram_hp_w2                | 68.33 | 22.5 | 45.0 | **65.42**
+ngram_hp_w2                | 60.0 | 37.5 | 48.75 | **58.49**
 ngram_hp_f                | 65.0 | 48.75 | 50.0 | **63.44**
 </td><td>
 
@@ -188,7 +188,7 @@ ngram_hp_f                | 65.0 | 48.75 | 50.0 | **63.44**
 |---------------------------------|---------|--------|---------|--------|----------|---|
 |**Model**| bays | gods | cities-fortresses|Maesters|Houses|**total**|
 ngram_asoif_w1                              | 51.25 | 55.0 | 58.13 | 53.25 | 70.0 | **65.3**
-ngram_asoif_w2                | 73.75 | 57.5 | 57.5 | 43.75 | 70.0 | **63.45**
+ngram_asoif_w2                | 51.25 | 57.5 | 61.25 | 57.0 | 70.0 | **65.8**
 ngram_asoif_f                | 58.75 | 53.75 | 56.25 | 48.0 | 70.0 | **62.85**
 </td></tr> </table>
 
@@ -200,7 +200,7 @@ ngram_asoif_f                | 58.75 | 53.75 | 56.25 | 48.0 | 70.0 | **62.85**
 |---------------------------------|---------|--------|---------|--------|
 |**Model**| geographical-objects|ministry_of_magic-employees | members-of-Order_of_the_Phoenix|**total**|
 ngram_lem_hp_w1                | 80.0 | 33.75 | 61.25 | **75.52**
-ngram_lem_hp_w2                | 80.0 | 30.0 | 27.5 | **73.39**
+ngram_lem_hp_w2                | 80.0 | 37.5 | 31.25 | **74.38**
 ngram_lem_hp_f                | 80.0 | 27.5 | 27.5 | **73.44**
 </td><td>
 
@@ -208,6 +208,6 @@ ngram_lem_hp_f                | 80.0 | 27.5 | 27.5 | **73.44**
 |---------------------------------|---------|--------|---------|--------|----------|---|
 |**Model**| bays | gods | cities-fortresses|Maesters|Houses|**total**|
 ngram_lem_asoif_w1                              | 90.0 | 55.0 | 52.5 | 55.0 | 75.0 | **69.6**
-ngram_lem_asoif_w2                | 90.0 | 55.0 | 54.37 | 55.0 | 75.0 | **69.75**
+ngram_lem_asoif_w2                | 90.0 | 55.0 | 58.13 | 55.0 | 75.0 | **70.05**
 ngram_lem_asoif_f                | 90.0 | 55.0 | 46.88 | 55.0 | 75.0 | **69.15**
 </td></tr> </table>
