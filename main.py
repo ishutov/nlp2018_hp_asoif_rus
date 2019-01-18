@@ -2,8 +2,10 @@ import glob
 import re
 import subprocess
 import sys
-
+from nltk.stem import WordNetLemmatizer
+from nltk.corpus import wordnet
 import nltk
+import spacy
 
 OUTPUT_FILE = '_processed.txt'
 OUTPUT_LEM_FILE = '_processed_lem.txt'
@@ -12,7 +14,7 @@ RE_WORDS = r'(\w+[-\w+]*)'
 
 
 def get_book_name(arg):
-    if arg not in ["asoif", "hp", "asoif_eng", "hp_eng"]:
+    if arg not in ["asoif", "hp", "asoif_eng", "hp_eng", "asoif_eng_processed", "hp_eng_processed"]:
         raise Exception("The book series must be either *ASOIF* or *HP*")
     return arg
 
@@ -58,6 +60,34 @@ def lemmatize(input_file, output_file, replacement_words):
                     final_sent += word + " "
             f_out.write(final_sent.strip() + "\n")
 
+def lemmatizeENG(input_file, output_file):
+    wordnet_lemmatizer = WordNetLemmatizer()
+    raw_text = read_file(input_file, DEFAULT_ENCODING)
+    with open(output_file, "w", encoding=DEFAULT_ENCODING) as f_out:
+        for sent in raw_text.splitlines():
+            lem_sent = ' '.join([wordnet_lemmatizer.lemmatize(w, get_wordnet_pos(w)) for w in nltk.word_tokenize(sent)])
+            # final_sent = wordnet_lemmatizer.lemmatize(sent, pos="v") + " "
+            f_out.write(lem_sent.strip() + "\n")
+
+def lemmatizeENG2(input_file, output_file):
+    nlp = spacy.load('en', disable=['parser', 'ner'])
+    raw_text = read_file(input_file, DEFAULT_ENCODING)
+    with open(output_file, "w", encoding=DEFAULT_ENCODING) as f_out:
+        for sent in raw_text.splitlines():
+            doc = nlp(sent)
+            lem_sent = " ".join([token.lemma_ if token.lemma_ != '-PRON-' else token.lower_ for token in doc])
+            f_out.write(lem_sent.strip() + "\n")
+
+
+def get_wordnet_pos(word):
+    """Map POS tag to first character lemmatize() accepts"""
+    tag = nltk.pos_tag([word])[0][1][0].upper()
+    tag_dict = {"J": wordnet.ADJ,
+                "N": wordnet.NOUN,
+                "V": wordnet.VERB,
+                "R": wordnet.ADV}
+
+    return tag_dict.get(tag, wordnet.NOUN)
 
 def get_words_from_datasets(INFILE, encoding):
     result = []
@@ -83,6 +113,8 @@ def main():
     dataset_words = get_words_from_datasets("./datasets/" + book, DEFAULT_ENCODING)
     lemmatize(book + OUTPUT_FILE, book + OUTPUT_LEM_FILE, dataset_words)
 
+    # lemmatizeENG(get_book_name(sys.argv[1].lower()) + ".txt", get_book_name(sys.argv[1].lower()) + "_lem.txt")
+    # lemmatizeENG2(get_book_name(sys.argv[1].lower()) + ".txt", get_book_name(sys.argv[1].lower()) + "_lem.txt")
 
 if __name__ == "__main__":
     main()
