@@ -127,3 +127,14 @@ Add a new section to `config.py` with the settings for the new dataset.
   
 ## Results
 For more information about results of this project, see [Results.md](Results.md)
+
+Evaluation results of russian books and datasets are a bit lower than english, but still quite similar. 
+Generally, this difference can be explained by various forms of words in Russian. 
+
+We've tried to solve this problem by lemmatization of russian books, and the results became better - 
+difference between english and russian evaluation results has been reduced.
+
+The results could be much better, because lemmatization process was proceeded according to the russian language rules
+and some english words (specially, named entities) were lemmatized wrong, which led to decreasing total results. 
+If exclude such words during lemmatization, the results will be higher. 
+The full analysis you can find [here](Results.md#differences-analysis)
