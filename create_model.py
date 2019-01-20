@@ -34,7 +34,7 @@ def train_model_w2v(sentences, arg):
     elif arg == 'w2':
         return Word2Vec(sentences, size=300, negative=0, sg=1, hs=1, iter=15, window=12)
     elif arg == 'w3':
-        return Word2Vec(sentences, size=300, negative=15, sg=1, hs=1, iter=15, window=12)
+        return Word2Vec(sentences, size=300, negative=15, sg=1, hs=0, iter=15, window=12)
     elif arg == 'w4':
         return Word2Vec(sentences, size=300, negative=0, sg=0, hs=1, iter=15)
     else:
@@ -45,7 +45,7 @@ def train_model_w2v_ngram(sentences, arg):
     if arg == 'w1':
         return Word2Vec(sentences, size=300, negative=0, sg=1, hs=1, iter=15, window=12)
     elif arg == 'w2':
-        return Word2Vec(sentences, size=300, negative=15, sg=1, hs=1, iter=15, window=12)
+        return Word2Vec(sentences, size=300, negative=15, sg=1, hs=0, iter=15, window=12)
     else:
         raise Exception("Please choose: w{1,2,3,4}")
 
@@ -57,7 +57,7 @@ def train_model_ft(sentences, arg):
     elif arg == 'f1':
         return FastText(sentences, sg=1, hs=1, size=300, iter=15, window=12, negative=0)
     elif arg == 'f2':
-        return FastText(sentences, sg=1, hs=1, size=300, iter=15, window=12, negative=15)
+        return FastText(sentences, sg=1, hs=0, size=300, iter=15, window=12, negative=15)
     else:
         raise Exception("Please choose: f{1,2}")
 
