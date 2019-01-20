@@ -31,7 +31,7 @@
 
 # Results 
 
-### Analogies evaluation for English, Russian, Russian lemmatized
+### Analogies evaluation for uni-gram English, Russian, Russian lemmatized
 <table>
 <tr><th>HP</th><th>ASOIF</th></tr>
 <tr><td>
@@ -62,7 +62,7 @@
 
 </td></tr> </table>
 
-### Doesn't match evaluation for English, Russian, Russian lemmatized
+### Doesn't match evaluation for uni-gram English, Russian, Russian lemmatized
 <table>
 <tr><th>HP</th><th>ASOIF</th></tr>
 <tr><td>
@@ -90,6 +90,50 @@
 | 73.02 | 63.0| 72.65 |
 | 75.11 | 66.85| 68.8 |
 | 73.97 | 70.67| 71.14 |
+
+</td></tr> </table>
+
+***
+
+### Analogies evaluation for n-gram Russian, Russian lemmatized
+<table>
+<tr><th>HP</th><th>ASOIF</th></tr>
+<tr><td>
+
+| **Model** | **Russian** |**Russian Lemmatized** |
+|:----------|:---------------------|:-------------------------|
+| **w1**    | 0.0 | 6.82
+| **w2**    | 2.08 | 4.55
+| **f**     | 4.17 | 0.0
+    
+</td><td>
+
+| **Model** | **Russian** |**Russian Lemmatized** |
+|:----------|:---------------------|:-------------------------|
+| **w1**    | 0.0 | 10.0
+| **w2**    | 0.91 | 1.11
+| **f**     | 0.0 | 0.0
+
+</td></tr> </table>
+
+### Doesn't match evaluation for n-gram Russian, Russian lemmatized
+<table>
+<tr><th>HP</th><th>ASOIF</th></tr>
+<tr><td>
+
+| **Model** | **Russian** |**Russian Lemmatized** |
+|:----------|:---------------------|:-------------------------|
+| **w1**    | 67.76 | 75.52
+| **w2**    | 58.49 | 74.38
+| **f**     | 63.44 | 73.44
+    
+</td><td>
+
+| **Model** | **Russian** |**Russian Lemmatized** |
+|:----------|:---------------------|:-------------------------|
+| **w1**    | 65.3 | 69.6
+| **w2**    | 65.8 | 70.05
+| **f**     | 62.85 | 69.15
 
 </td></tr> </table>
 
