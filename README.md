@@ -19,6 +19,14 @@ Here you find the following:
 - Furthermore, here you find scripts to create / extend the datasets -- by creating permutations of input data.
 - Finally, you can re-use the scripts to evaluate the data.
 
+### Preprocessing
+If you want to do some preprocessing for your source books, you can easily run the following:
+```
+    python preprocessing.py {hp|asoif} [lem]
+```
+where `{hp|asoif}` is the book you want to preprocess and `lem` is an optional argument, if you want to try with lemmatization.
+After preprocessing you'll have two output files transformed to `one sentence - one line` format with no punctuation
+
 ## The Datasets
 The datasets can be found in the folder [datasets](datasets).
 Like in the original word2vec-toolkit, the files to be evaluated are named `questions`\*.
@@ -37,10 +45,11 @@ To extend or modify the test n-gram data, edit the same respective source files 
 After modifying the test data run the following command to re-create the datasets (the `question_` files).
 ```
     cd datasets 
-    python create_questions.py
+    python create_questions.py [ngram]
 ```
 
 This will generate section-based permutations to create the evaluation datasets. 
+If you want to proceed with `ngram` datasets, please add `ngram` option
 You can also add completly new datasets and add a line into `create_questions.py`.
 
 ## The Models
@@ -60,18 +69,28 @@ Next setups for models are in use for current project:
     - **w**: size=100, window=5, min_count=5, sample=0.001, sg=0, hs=0, negative=5, iter=5,
     - **w1**:  size=300, -negative=0, sg=1, hs=1, iter=15
     - **w2**:  size=300, -negative=0, sg=1, hs=1, iter=15, window=12
-    - **w3**:  size=300, -negative=15, sg=1, hs=1, iter=15, window=12
+    - **w3**:  size=300, -negative=15, sg=1, hs=0, iter=15, window=12
     - **w4**:  size=300, -negative=0, sg=0, hs=1, iter=15
 - FastText:
     - **f**: sg=0, hs=0, size=100, window=5, negative=5, iter=5
     - **f1**:  sg=1, hs=1, size=300, iter=15, window=12, negative=0
-    - **f2**:  sg=1, hs=1, size=300, iter=15, window=12, negative=15
+    - **f2**:  sg=1, hs=0, size=300, iter=15, window=12, negative=15
 #### For n-grams:
 - Word2Vec:
     - **w1**: size=300, negative=0, sg=1, hs=1, iter=15, window=12
     - **w2**: size=300, negative=15, sg=1, hs=1, iter=15, window=12
 - FastText:
     - **f**: defaults, iter=25, window=12
+    
+## Frequencies evaluation
+If you want to see frequencies statistics of your datasets (how many times each term in dataset appears in the books), 
+you can do frequencies evaluation:
+```
+    cd datasets
+    python check_frequencies.py {lem|nolem} [ngram]
+```
+choose `lem` option, if you want to check on lemmatized version, otherwise put `nolem`
+If you want to check ngrams, just add optional argument `ngram`
 
 ## Doing the evalation
 
@@ -79,7 +98,7 @@ Next setups for models are in use for current project:
 Choose the book series you want to evaluate (`asoif` or `hp`), and the task type you want to
 do, analogy or doesnt_match. Call the scripts as shown below.
 In `config.py` you can switch from uni-gram (default) to n-gram datasets. For evaluation n-gram datasets
-set `NGRAMS=True`.
+set `NGRAMS=True`. For evaluation lemmatized version set `LEMMATIZATION=True`
 
 #### Analogies task
 ```
