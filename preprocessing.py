@@ -2,8 +2,13 @@ import glob
 import re
 import subprocess
 import sys
-
 import nltk
+
+"""
+    This is the preprocessing file
+    It removes punctuation, empty lines, lines without letters, split sentences and lemmatise if needed
+"""
+
 
 OUTPUT_FILE = '_processed.txt'
 OUTPUT_LEM_FILE = '_processed_lem.txt'
