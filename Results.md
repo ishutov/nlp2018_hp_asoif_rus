@@ -137,7 +137,49 @@
 
 </td></tr> </table>
 
-[Analogies and doesn't match evaluation](/evaluation/comparison_evaluation.md) 
+***
+
+### Average words' frequencies 
+
+#### Uni-gram
+<table>
+<tr><th>HP</th><th>ASOIF</th></tr>
+<tr><td>
+
+|  | **English** |**Russian** |**Russian Lemmatized** |
+|:----------|:---------------------|:-------------------------|:-------------------------|
+| **Average frequencies**    | 404 | 324.14 | 345.63
+| **Amount of words < 5**    | 6 | 22 | 29
+    
+</td><td>
+
+|  | **English** |**Russian** |**Russian Lemmatized** |
+|:----------|:---------------------|:-------------------------|:-------------------------|
+| **Average frequencies**    | 349 | 332.19 | 326.97
+| **Amount of words < 5**    | 1 | 7 | 16
+    
+</td></tr> </table>
+
+#### N-gram
+<table>
+<tr><th>HP</th><th>ASOIF</th></tr>
+<tr><td>
+
+|  | **English** |**Russian** |**Russian Lemmatized** |
+|:----------|:---------------------|:-------------------------|:-------------------------|
+| **Average frequencies**    | 456.64 | 400.14 | 422.47
+| **Amount of words < 5**    | 5 | 24 | 56
+    
+</td><td>
+
+|  | **English** |**Russian** |**Russian Lemmatized** |
+|:----------|:---------------------|:-------------------------|:-------------------------|
+| **Average frequencies**    | 276.62 | 236.19 | 258.57
+| **Amount of words < 5**    | 6 | 30 | 59
+    
+</td></tr> </table>
+
+[More stats for analogies and doesn't match evaluation](/evaluation/comparison_evaluation.md) 
 
 [Comparison of evaluation between English and Russian](/evaluation/eng_rus_comparison.md) 
 
