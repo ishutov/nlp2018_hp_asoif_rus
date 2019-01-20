@@ -16,6 +16,7 @@
     @author Gerhard Wohlgenannt, ITMO University, St. Petersburg, Russia
 """
 
+import sys
 import random, math, itertools
 
 
@@ -122,14 +123,22 @@ def create_dataset(sourcefile=None, outfile=None, mode=None):
 
 
 if __name__ == "__main__":
-
-    # create_dataset(sourcefile="asoif_analogies.txt",          outfile="questions_asoif_analogies.txt",   mode="analogies")
-    # create_dataset(sourcefile="asoif_doesnt_match.txt",       outfile="questions_asoif_doesnt_match.txt", mode="doesnt_match")
-    create_dataset(sourcefile="./ngram/asoif_analogies_ngram.txt",    outfile="./ngram/questions_asoif_analogies_ngram.txt",   mode="analogies")
-    create_dataset(sourcefile="./ngram/asoif_doesnt_match_ngram.txt", outfile="./ngram/questions_asoif_doesnt_match_ngram.txt", mode="doesnt_match")
-
-    # create_dataset(sourcefile="hp_analogies.txt",          outfile="questions_hp_analogies.txt",   mode="analogies")
-    # create_dataset(sourcefile="hp_doesnt_match.txt",       outfile="questions_hp_doesnt_match.txt", mode="doesnt_match")
-    create_dataset(sourcefile="./ngram/hp_analogies_ngram.txt",    outfile="./ngram/questions_hp_analogies_ngram.txt",   mode="analogies")
-    create_dataset(sourcefile="./ngram/hp_doesnt_match_ngram.txt", outfile="./ngram/questions_hp_doesnt_match_ngram.txt", mode="doesnt_match")
+    if len(sys.argv) == 2: # if ngrams
+        create_dataset(sourcefile="./ngram/asoif_analogies_ngram.txt",
+                       outfile="./ngram/questions_asoif_analogies_ngram.txt", mode="analogies")
+        create_dataset(sourcefile="./ngram/asoif_doesnt_match_ngram.txt",
+                       outfile="./ngram/questions_asoif_doesnt_match_ngram.txt", mode="doesnt_match")
+        create_dataset(sourcefile="./ngram/hp_analogies_ngram.txt", outfile="./ngram/questions_hp_analogies_ngram.txt",
+                       mode="analogies")
+        create_dataset(sourcefile="./ngram/hp_doesnt_match_ngram.txt",
+                       outfile="./ngram/questions_hp_doesnt_match_ngram.txt", mode="doesnt_match")
+    else:
+        create_dataset(sourcefile="asoif_analogies.txt",
+                       outfile="questions_asoif_analogies.txt", mode="analogies")
+        create_dataset(sourcefile="asoif_doesnt_match.txt",
+                       outfile="questions_asoif_doesnt_match.txt", mode="doesnt_match")
+        create_dataset(sourcefile="hp_analogies.txt",
+                       outfile="questions_hp_analogies.txt", mode="analogies")
+        create_dataset(sourcefile="hp_doesnt_match.txt",
+                       outfile="questions_hp_doesnt_match.txt", mode="doesnt_match")
 

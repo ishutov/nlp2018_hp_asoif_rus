@@ -8,14 +8,17 @@
 
 import sys
 
-# NGRAMS = False
-NGRAMS=True
+NGRAMS = False
+# NGRAMS=True
 
 ## this sets if we do evaluation based on term frequency (new) in doesnt_match evaluation
 ## for this you might need the book corpora to recompute the frequencies
 ## that is why we made this feature optional
 DO_FREQ_EVAL = True
 # DO_FREQ_EVAL=False
+
+# this sets if we do evaluation based on pretrained models on lemmatized books
+LEMMATIZATION=False
 
 ## use the input parameter to select the book series
 if len(sys.argv) < 2:
@@ -53,86 +56,98 @@ MODEL_PATH = "../models/"
 # pretrained fasttext wikipedia  https://github.com/facebookresearch/fastText/blob/master/pretrained-vectors.md (english wikipedia)
 
 if BOOK_SERIES == "ASOIF":
-    METHODS = [
-        # w2vec models
-        ('lem_asoif_w', 'vec'),
-        ('lem_asoif_w1', 'vec'),
-        ('lem_asoif_w2', 'vec'),
-        ('lem_asoif_w3', 'vec'),
-        ('lem_asoif_w4', 'vec'),
-        # fastText models
-        ('lem_asoif_f', 'vec'),
-        ('lem_asoif_f1', 'vec'),
-        ('lem_asoif_f2', 'vec'),
+    if LEMMATIZATION:
+        METHODS = [
+            # w2vec models
+            ('lem_asoif_w', 'vec'),
+            ('lem_asoif_w1', 'vec'),
+            ('lem_asoif_w2', 'vec'),
+            ('lem_asoif_w3', 'vec'),
+            ('lem_asoif_w4', 'vec'),
+            # fastText models
+            ('lem_asoif_f', 'vec'),
+            ('lem_asoif_f1', 'vec'),
+            ('lem_asoif_f2', 'vec')
+        ]
+    else:
+        METHODS = [
+            # w2vec models
+            ('asoif_w', 'vec'),
+            ('asoif_w1', 'vec'),
+            ('asoif_w2', 'vec'),
+            ('asoif_w3', 'vec'),
+            ('asoif_w4', 'vec'),
+            # fastText models
+            ('asoif_f', 'vec'),
+            ('asoif_f1', 'vec'),
+            ('asoif_f2', 'vec')
 
-        # # w2vec models
-        # ('asoif_w', 'vec'),
-        # ('asoif_w1', 'vec'),
-        # ('asoif_w2', 'vec'),
-        # ('asoif_w3', 'vec'),
-        # ('asoif_w4', 'vec'),
-        # # fastText models
-        # ('asoif_f', 'vec'),
-        # ('asoif_f1', 'vec'),
-        # ('asoif_f2', 'vec'),
-
-        # ('ruwikiruscorpora_upos_skipgram_300_2_2018.vec', 'vec'),
-        # ('wiki.ru.vec', 'vec'),
-    ]
+            # ('ruwikiruscorpora_upos_skipgram_300_2_2018.vec', 'vec'),
+            # ('wiki.ru.vec', 'vec'),
+        ]
 
     if NGRAMS:
-        METHODS = [
-            # ('ngram_lem_asoif_w1', 'vec'),
-            # ## Skip-gram, window-size 12, 300dim, hier.softmax, iter 15, no neg-sampling
-            # ('ngram_lem_asoif_w2', 'vec'),
-            # ## Skip-gram, window-size 12, 300dim, hier.softmax, iter 15, -negative 15
-            # ('ngram_lem_asoif_f', 'vec'),  # default and: -epoch 25 -ws 12
-
-            ('ngram_asoif_w1', 'vec'),
-            ## Skip-gram, window-size 12, 300dim, hier.softmax, iter 15, no neg-sampling
-            ('ngram_asoif_w2', 'vec'),
-            ## Skip-gram, window-size 12, 300dim, hier.softmax, iter 15, -negative 15
-            ('ngram_asoif_f', 'vec'),  # default and: -epoch 25 -ws 12
-        ]
+        if LEMMATIZATION:
+            METHODS = [
+                ('ngram_lem_asoif_w1', 'vec'),
+                ## Skip-gram, window-size 12, 300dim, hier.softmax, iter 15, no neg-sampling
+                ('ngram_lem_asoif_w2', 'vec'),
+                ## Skip-gram, window-size 12, 300dim, hier.softmax, iter 15, -negative 15
+                ('ngram_lem_asoif_f', 'vec'),  # default and: -epoch 25 -ws 12
+            ]
+        else:
+            METHODS = [
+                ('ngram_asoif_w1', 'vec'),
+                ## Skip-gram, window-size 12, 300dim, hier.softmax, iter 15, no neg-sampling
+                ('ngram_asoif_w2', 'vec'),
+                ## Skip-gram, window-size 12, 300dim, hier.softmax, iter 15, -negative 15
+                ('ngram_asoif_f', 'vec'),  # default and: -epoch 25 -ws 12
+            ]
 
 if BOOK_SERIES == "HP":
-    METHODS = [
-        # w2vec models
-        ('lem_hp_w', 'vec'),
-        ('lem_hp_w1', 'vec'),
-        ('lem_hp_w2', 'vec'),
-        ('lem_hp_w3', 'vec'),
-        ('lem_hp_w4', 'vec'),
-        # fastText models
-        ('lem_hp_f', 'vec'),
-        ('lem_hp_f1', 'vec'),
-        ('lem_hp_f2', 'vec'),
+    if LEMMATIZATION:
+        METHODS = [
+            # w2vec models
+            ('lem_hp_w', 'vec'),
+            ('lem_hp_w1', 'vec'),
+            ('lem_hp_w2', 'vec'),
+            ('lem_hp_w3', 'vec'),
+            ('lem_hp_w4', 'vec'),
+            # fastText models
+            ('lem_hp_f', 'vec'),
+            ('lem_hp_f1', 'vec'),
+            ('lem_hp_f2', 'vec')
+        ]
+    else:
+        METHODS = [
+            # w2vec models
+            ('hp_w', 'vec'),
+            ('hp_w1', 'vec'),
+            ('hp_w2', 'vec'),
+            ('hp_w3', 'vec'),
+            ('hp_w4', 'vec'),
+            # fastText models
+            ('hp_f', 'vec'),
+            ('hp_f1', 'vec'),
+            ('hp_f2', 'vec')
 
-        # # w2vec models
-        # ('hp_w', 'vec'),
-        # ('hp_w1', 'vec'),
-        # ('hp_w2', 'vec'),
-        # ('hp_w3', 'vec'),
-        # ('hp_w4', 'vec'),
-        # # fastText models
-        # ('hp_f', 'vec'),
-        # ('hp_f1', 'vec'),
-        # ('hp_f2', 'vec'),
-
-        # ('ruwikiruscorpora_upos_skipgram_300_2_2018.vec', 'vec'),
-        # ('wiki.ru.vec', 'vec'),
-    ]
+            # ('ruwikiruscorpora_upos_skipgram_300_2_2018.vec', 'vec'),
+            # ('wiki.ru.vec', 'vec'),
+        ]
 
     if NGRAMS:
-        METHODS = [
-            # ('ngram_lem_hp_w1', 'vec'),
-            # ('ngram_lem_hp_w2', 'vec'),
-            # ('ngram_lem_hp_f', 'vec'),  # for paper!, 25 epoch
-
-            ('ngram_hp_w1', 'vec'),
-            ('ngram_hp_w2', 'vec'),
-            ('ngram_hp_f', 'vec'),  # for paper!, 25 epoch
-        ]
+        if LEMMATIZATION:
+            METHODS = [
+                ('ngram_lem_hp_w1', 'vec'),
+                ('ngram_lem_hp_w2', 'vec'),
+                ('ngram_lem_hp_f', 'vec'),  # for paper!, 25 epoch
+            ]
+        else:
+            METHODS = [
+                ('ngram_hp_w1', 'vec'),
+                ('ngram_hp_w2', 'vec'),
+                ('ngram_hp_f', 'vec'),  # for paper!, 25 epoch
+            ]
 
 # -----------------------------------------------------
 # for "doesnt_match" evaluation script

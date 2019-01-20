@@ -6,7 +6,7 @@ MIN_NUM = 5
 
 def check_frequencies(INFILE, BOOK, encoding):
     all_words = []
-    for name in glob.glob(INFILE + '*'):
+    for name in glob.glob(INFILE + '*.txt'):
         for line in open(name, encoding=encoding):
             if line.startswith(':') or line.startswith('"') or not line.strip():
                 continue
@@ -39,12 +39,28 @@ def check_frequencies(INFILE, BOOK, encoding):
     pickle.dump(dw, open(INFILE + '.pickle', 'wb'))
 
 def main():
+    source_datasets_hp = "hp"
+    source_datasets_asoif = "asoif"
+
+    if len(sys.argv) < 2:
+        raise Exception("Usage: preprocessing.py {lem|nolem} [ngram]")
+    if sys.argv[1].lower() == "lem":
+        source_book_hp = "../hp_processed_lem.txt"
+        source_book_asoif = "../asoif_processed_lem.txt"
+        if len(sys.argv) == 3:
+            source_book_hp = "../hp_processed_lem_ngram.txt"
+            source_book_asoif = "../asoif_processed_lem_ngram.txt"
+    else:
+        source_book_hp = "../hp_processed.txt"
+        source_book_asoif = "../asoif_processed.txt"
+        if len(sys.argv) == 3:
+            source_book_hp = "../hp_processed_ngram.txt"
+            source_book_asoif = "../asoif_processed_ngram.txt"
+
     print("\n\tHarry Potter\n")
-    # check_frequencies("hp", "../hp_processed_lem.txt", DEFAULT_ENCODING)
-    check_frequencies("./ngram/hp", "../hp_processed_ngram.txt", DEFAULT_ENCODING)
+    check_frequencies(source_datasets_hp, source_book_hp, DEFAULT_ENCODING)
     print("\n\n\tA Song of Ice and Fire\n")
-    # check_frequencies("asoif", "../asoif_processed_lem.txt", DEFAULT_ENCODING)
-    check_frequencies("./ngram/asoif", "../asoif_processed_ngram.txt", DEFAULT_ENCODING)
+    check_frequencies(source_datasets_asoif, source_book_asoif, DEFAULT_ENCODING)
 
 if __name__ == "__main__":
     main()

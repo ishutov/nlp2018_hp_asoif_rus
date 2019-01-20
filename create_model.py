@@ -16,7 +16,6 @@ def parse_input(argv):
     model_arg = sys.argv[2].lower()
     ngram = False
     if len(sys.argv) == 4:
-        print(sys.argv[3])
         ngram = True
 
     return book, model_arg, ngram
@@ -70,8 +69,9 @@ def train_model_ft_ngram(sentences, arg):
 
 
 def get_book_name(arg):
-    if arg not in ["asoif", "hp", "asoif_eng", "hp_eng"]:
-        raise Exception("The book series must be either *ASOIF* or *HP*")
+    acceptable_args = ["asoif", "hp", "asoif_eng", "hp_eng"]
+    if arg not in acceptable_args:
+        raise Exception("The book series must be in " + str(acceptable_args))
     return arg
 
 

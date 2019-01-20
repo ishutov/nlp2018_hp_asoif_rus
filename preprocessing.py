@@ -6,19 +6,21 @@ import nltk
 
 """
     This is the preprocessing file
-    It removes punctuation, empty lines, lines without letters, split sentences and lemmatise if needed
+    Usage: preprocessing.py book [lem]
+    It removes punctuation, empty lines, lines without letters, split sentences and lemmatization if needed
 """
 
 
 OUTPUT_FILE = '_processed.txt'
 OUTPUT_LEM_FILE = '_processed_lem.txt'
 DEFAULT_ENCODING = 'utf-8'
-RE_WORDS = r'(\w+[-\w+]*)'
+RE_WORDS = r'(\w+[-\w+]*)' # don't remove dashes in words like 'когда-нибудь', 'кто-то' etc.
 
 
 def get_book_name(arg):
-    if arg not in ["asoif", "hp", "asoif_eng", "hp_eng"]:
-        raise Exception("The book series must be either *ASOIF* or *HP*")
+    acceptable_args = ["asoif", "hp", "asoif_eng", "hp_eng"]
+    if arg not in acceptable_args:
+        raise Exception("The book series must be in " + str(acceptable_args))
     return arg
 
 
@@ -29,7 +31,7 @@ def read_file(path, encoding):
 
 
 def is_valid(sentence):
-    return re.search('\w+', sentence)
+    return re.search('\w+', sentence) # leave only sentences contains at least one word character
 
 
 def remove_punctuation(sentence):
@@ -46,15 +48,21 @@ def process_sentences(raw_sentences, output_file):
 
 
 def lemmatize(input_file, output_file, replacement_words):
+    # run Yandex mystem for lemmatization
     subprocess.call([r"./mystem.exe", "-lcd", input_file, output_file])
     raw_text = read_file(output_file, DEFAULT_ENCODING)
     with open(output_file, "w", encoding=DEFAULT_ENCODING) as f_out:
         for sent in raw_text.splitlines():
-            processed_sent = remove_punctuation(sent)
+            processed_sent = remove_punctuation(sent) # clean words from '{}' symbols put by mystem
             final_sent = ""
-            for word in processed_sent.split(' '):
+            # mystem replaces all 'ё' letters to 'e' and makes all words lowercase
+            # so we need to proceed some steps to restore original words in the books
+            for word in processed_sent.split(' '): # loop through words in each sentence in the books
                 replace = False
-                for rep_word in replacement_words:
+                for rep_word in replacement_words: # loop through words in datasets
+                    # replace 'ё' letters to 'e' and transform to lowercase
+                    # if transformed word in dataset equals to word in sentence from book
+                    # take the original word from dataset
                     if rep_word.replace('ё', 'е').lower() == word:
                         final_sent += rep_word + " "
                         replace = True
@@ -79,14 +87,18 @@ def get_words_from_datasets(INFILE, encoding):
 
 def main():
     if len(sys.argv) < 2:
-        raise Exception("We need three command line arguments: main.py book")
+        raise Exception("Usage: preprocessing.py book [lem]")
+    is_lem = False
+    if len(sys.argv) == 3:
+        is_lem = True
     book = get_book_name(sys.argv[1].lower())
     raw_text = read_file(book + ".txt", DEFAULT_ENCODING)
     raw_sentences = nltk.tokenize.sent_tokenize(raw_text)
     with open(book + OUTPUT_FILE, "w", encoding=DEFAULT_ENCODING) as f_out:
         process_sentences(raw_sentences, f_out)
-    dataset_words = get_words_from_datasets("./datasets/" + book, DEFAULT_ENCODING)
-    lemmatize(book + OUTPUT_FILE, book + OUTPUT_LEM_FILE, dataset_words)
+    if is_lem:
+        dataset_words = get_words_from_datasets("./datasets/" + book, DEFAULT_ENCODING) # all words in datasets
+        lemmatize(book + OUTPUT_FILE, book + OUTPUT_LEM_FILE, dataset_words)
 
 
 if __name__ == "__main__":
