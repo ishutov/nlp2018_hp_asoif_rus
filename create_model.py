@@ -3,6 +3,11 @@ from gensim.models.word2vec import LineSentence
 from gensim.models import Word2Vec
 from gensim.models import FastText
 
+"""
+    This is the file to create models
+    Usage: create_model.py book model [ngram]
+    It trains models with setups that can be founded in README.md
+"""
 
 def parse_input(argv):
     if len(argv) < 3:
