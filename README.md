@@ -14,7 +14,7 @@
 ### Summary
 Here you find the following:
 - 4 datasets (for uni-grams & n-grams) each for evaluating language models about the books **A Song of Ice and Fire** by GRR Martin and **Harry Potter** by JK Rowling _in translations for Russian language_
-- The dataset contains a large of number of task of type **analogy** and **doesnt-match**.
+- The datasets contain a large of number of task of type **analogy** and **doesnt-match**.
 - Your model can be tested easily, esp. if you can load it with [Gensim](https://radimrehurek.com/gensim).
 - Furthermore, here you find scripts to create / extend the datasets -- by creating permutations of input data.
 - Finally, you can re-use the scripts to evaluate the data.
@@ -94,7 +94,6 @@ If you want to check ngrams, just add optional argument `ngram`
 
 ## Doing the evalation
 
-
 Choose the book series you want to evaluate (`asoif` or `hp`), and the task type you want to
 do, analogy or doesnt_match. Call the scripts as shown below.
 In `config.py` you can switch from uni-gram (default) to n-gram datasets. For evaluation n-gram datasets
@@ -128,13 +127,13 @@ Add a new section to `config.py` with the settings for the new dataset.
 ## Results
 For more information about results of this project, see [Results.md](Results.md)
 
-Evaluation results of russian books and datasets are a bit lower than english, but still quite similar. 
-Generally, this difference can be explained by various forms of words in Russian. 
+Evaluation results of the Russian books and datasets are a bit lower than for English, but still quite similar. 
+Generally, this difference might be mainly explained by various forms of words in Russian (Russian morphology). 
 
-We've tried to solve this problem by lemmatization of russian books, and the results became better - 
-difference between english and russian evaluation results has been reduced.
+We've attacked this problem by lemmatization of the Russian books, and the results became better - 
+the difference between English and Russian evaluation results was reduced.
 
-The results could be much better, because lemmatization process was proceeded according to the russian language rules
-and some english words (specially, named entities) were lemmatized wrong, which led to decreasing total results. 
-If exclude such words during lemmatization, the results will be higher. 
-The full analysis you can find [here](Results.md#differences-analysis)
+The results could still be better, as the lemmatization process is done according to the Russian language rules -- 
+and some English words (specially, named entities) -- were lemmatized wrongly, which leads to decreasing total results. 
+If such words are excluded during lemmatization, the results will be higher. 
+The full analysis can be found [here -- Results.md](Results.md#differences-analysis)
